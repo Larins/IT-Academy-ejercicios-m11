@@ -4,6 +4,8 @@ public class Flower extends Product {
 	
 	protected static String color;
 	
+	// Falta Incloure ID Floristeria
+	
 	public Flower(float price, String name, int qty, String color) {
 		super(price, name, qty);
 		

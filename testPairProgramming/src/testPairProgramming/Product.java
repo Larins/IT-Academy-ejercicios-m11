@@ -22,10 +22,20 @@ public abstract class Product {
 		}
 		
 		//Getter Setters
+		
+		public int getIdFloristeria() {
+			return idFloristeria;
+		}
+
+		public void setIdFloristeria(int idFloristeria) {
+			this.idFloristeria = idFloristeria;
+		}
 
 		public int getIdProduct() {
 			return idProduct;
 		}
+
+		
 
 		public void setIdProduct(int id) {
 			this.idProduct = idProduct;

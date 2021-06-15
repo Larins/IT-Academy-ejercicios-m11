@@ -19,7 +19,7 @@ public class FloristeriaController {
 		}
 	}
 	
-	public void createDecoration(float price, String name, int qty) throws Exception {
+	public void createDecoration(float price, String name, int qty,String material) throws Exception {
     	try {
 	        Decoration decoration = new Decoration(price, name, qty, Decoration.material);
 	        repository.addProduct(decoration);
@@ -29,7 +29,7 @@ public class FloristeriaController {
 		}
 	}
 	
-	public void createFlower(float price, String name, int qty) throws Exception {
+	public void createFlower(float price, String name, int qty, String color) throws Exception {
     	try {
 	        Flower flower = new Flower(price, name, qty, Flower.color);
 	        repository.addProduct(flower);
@@ -39,7 +39,7 @@ public class FloristeriaController {
 		}
 	}
 	
-	public void createTree(float price, String name, int qty) throws Exception {
+	public void createTree(float price, String name, int qty, float height) throws Exception {
     	try {
     		Tree tree = new Tree(price, name, qty, Tree.height);
 	        repository.addProduct(tree);

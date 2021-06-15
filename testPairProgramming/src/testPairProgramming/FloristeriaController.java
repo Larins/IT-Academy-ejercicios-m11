@@ -48,5 +48,12 @@ public class FloristeriaController {
 			System.out.println("\nERROR: " + e.getMessage());	
 		}
 	}
+	
+    public String getAllProducts() {
+        StringBuilder sb = new StringBuilder();
+        for (Product product : repository.getAllProducts())
+            sb.append(product.name).append("\n\n");
+        return sb.toString();
+    }
 
 }

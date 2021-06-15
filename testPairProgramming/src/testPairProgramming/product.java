@@ -1,10 +1,15 @@
 package testPairProgramming;
 
-public class product {
+public abstract class Product {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+		protected float price;
+		protected String name;
+		protected int qty;
+		
+		public Product(float price, String name, int qty) {
+			this.price = price;
+			this.name = name;
+			this.qty = qty;
+		}
 
 }

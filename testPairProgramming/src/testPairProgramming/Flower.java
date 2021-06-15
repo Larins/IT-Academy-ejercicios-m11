@@ -9,5 +9,13 @@ public class Flower extends Product {
 		
 		this.color = color;
 	}
+	//Getter Setter
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
 
 }

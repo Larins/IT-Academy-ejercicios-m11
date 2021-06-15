@@ -2,7 +2,7 @@ package testPairProgramming;
 
 public class Flower extends Product {
 	
-	protected String color;
+	protected static String color;
 	
 	public Flower(float price, String name, int qty, String color) {
 		super(price, name, qty);

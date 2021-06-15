@@ -2,7 +2,7 @@ package testPairProgramming;
 
 public class Decoration extends Product {
 	
-	protected String material;
+	protected static String material;
 	
 	public Decoration(float price, String name, int qty, String material) throws Exception {
 		super(price, name, qty);

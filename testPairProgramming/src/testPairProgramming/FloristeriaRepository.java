@@ -2,6 +2,7 @@ package testPairProgramming;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class FloristeriaRepository {
 		
 private static List<Product> products=new ArrayList<>();
@@ -12,7 +13,7 @@ private static List<Product> products=new ArrayList<>();
 		return new ArrayList<>(products);
 	}
 	
-	public void addMember(Product product) throws Exception{
+	public void addProduct(Product product) throws Exception{
 		if(product==null) throw new Exception();
 		products.add(product);	
 	}

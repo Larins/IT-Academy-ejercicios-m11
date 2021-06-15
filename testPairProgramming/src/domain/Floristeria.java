@@ -1,4 +1,4 @@
-package testPairProgramming;
+package domain;
 
 public class Floristeria {
 	

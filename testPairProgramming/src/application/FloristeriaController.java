@@ -1,4 +1,11 @@
-package testPairProgramming;
+package application;
+
+import domain.Decoration;
+import domain.Floristeria;
+import domain.Flower;
+import domain.Product;
+import domain.Tree;
+import persistence.FloristeriaRepository;
 
 public class FloristeriaController {
 	

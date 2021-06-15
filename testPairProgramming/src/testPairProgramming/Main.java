@@ -11,5 +11,11 @@ public class Main
 
     	
     	// Imprimir la lista de objetos.
+    	
+    	FloristeriaController controller=new FloristeriaController();
+    	
+    	String allProducts = controller.getAllProducts();
+		
+		System.out.println("EMPLOYEES:\n\n" + allProducts + " \n");
     }
 }

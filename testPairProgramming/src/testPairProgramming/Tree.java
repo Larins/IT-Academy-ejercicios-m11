@@ -9,5 +9,13 @@ public class Tree extends Product {
 		
 		this.height = height;
 	}
+//Getter setter
+	public float getHeight() {
+		return height;
+	}
+
+	public void setHeight(float height) {
+		this.height = height;
+	}
 
 }

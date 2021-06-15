@@ -4,6 +4,10 @@ public class Main
 {
     public static void main(String[] args)
     {
-        System.out.println("Hola Jordi!");
+        // Preguntar al usuario el producto y atributos que desea introducir.
+    	
+    	// Crear los objetos.
+    	
+    	// Imprimir la lista de objetos.
     }
 }

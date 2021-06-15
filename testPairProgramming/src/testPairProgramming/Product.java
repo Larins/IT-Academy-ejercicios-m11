@@ -2,7 +2,8 @@ package testPairProgramming;
 
 public abstract class Product {
 
-		protected int id;
+		protected int idFloristeria;
+		protected int idProduct;
 		protected float price;
 		protected String name;
 		protected int qty;
@@ -14,7 +15,7 @@ public abstract class Product {
 			this.name = name;
 			this.qty = qty;
 
-			id = COUNTER_PRODUCTS;
+			idProduct = COUNTER_PRODUCTS;
 			COUNTER_PRODUCTS++;
 			
 		
@@ -22,12 +23,12 @@ public abstract class Product {
 		
 		//Getter Setters
 
-		public int getId() {
-			return id;
+		public int getIdProduct() {
+			return idProduct;
 		}
 
-		public void setId(int id) {
-			this.id = id;
+		public void setIdProduct(int id) {
+			this.idProduct = idProduct;
 		}
 
 		public float getPrice() {

@@ -9,6 +9,15 @@ public class FloristeriaController {
 		repository = new FloristeriaRepository();
 	}
 	
+	public void createFloristeria(int idShop, String name) throws Exception {
+    	try {
+	        Floristeria floristeria = new Floristeria(idShop, name);
+	        repository.addFloristeria(floristeria);
+    	} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("\nERROR: " + e.getMessage() + "El material debe ser 'plastic' o 'wood'.");	
+		}
+	}
 	
 	public void createDecoration(float price, String name, int qty) throws Exception {
     	try {

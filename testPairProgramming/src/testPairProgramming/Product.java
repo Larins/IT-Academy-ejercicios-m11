@@ -19,5 +19,47 @@ public abstract class Product {
 			
 		
 		}
+		
+		//Getter Setters
+
+		public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			this.id = id;
+		}
+
+		public float getPrice() {
+			return price;
+		}
+
+		public void setPrice(float price) {
+			this.price = price;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public int getQty() {
+			return qty;
+		}
+
+		public void setQty(int qty) {
+			this.qty = qty;
+		}
+
+		public static int getCOUNTER_PRODUCTS() {
+			return COUNTER_PRODUCTS;
+		}
+
+		public static void setCOUNTER_PRODUCTS(int cOUNTER_PRODUCTS) {
+			COUNTER_PRODUCTS = cOUNTER_PRODUCTS;
+		}
 
 }

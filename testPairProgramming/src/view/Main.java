@@ -114,7 +114,7 @@ public class Main {
 					break;
 					
 				case 5: // Stock
-					fc.getAllProducts();
+					fc.stock();
 					break;
 				
 				}

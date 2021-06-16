@@ -11,6 +11,8 @@ import application.FloristeriaController;
 public class Main {
 	public static void main(String[] args) throws Exception {
 		
+		//Invocamos al controller y 
+		
 		FloristeriaController fc = new FloristeriaController();
 		int ids = 0; // comptador inicial idShop
 		String nomP = "nova Floristeria" ;// variable nom del producte
@@ -25,7 +27,6 @@ public class Main {
 
 		// Crear los objetos.
 
-		// Imprimir la lista de objetos.
 
 		String tecla;// Per continuar fent operacions
 		int opciomenu;
@@ -130,6 +131,9 @@ public class Main {
 
 		} while (tecla.equalsIgnoreCase("s"));
 		System.out.println ("Gracies per fer servir la nostre App");
+		
+		// Imprimir la lista de objetos.
+
 		
 		//Printar l'stock de productes.
 		

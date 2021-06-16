@@ -82,11 +82,12 @@ public class Main {
 					
 					//incloure idProduct
 					
-					String mat = "plastic";
+					//String mat = "plastic";
 					nomP =JOptionPane.showInputDialog("Introdueix nom del producte de decoració:");
 					
 
-					//String mat = JOptionPane.showInputDialog(null, "Selecciona el material de " + nomP,"Afegir arbre", JOptionPane.QUESTION_MESSAGE, null, deco, deco[]);
+					String mat = (String) JOptionPane.showInputDialog(null, "Selecciona el material de " + nomP,"Afegir arbre",
+							JOptionPane.QUESTION_MESSAGE, null, deco, deco[0]);
 					qtyP = Integer.parseInt(JOptionPane.showInputDialog("Introdueix la quantitat de " + nomP));
 					priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));
 					//mat = JOptionPane.showInputDialog("Introdueix material de " + nomP);

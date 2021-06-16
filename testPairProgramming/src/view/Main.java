@@ -1,5 +1,7 @@
 package view;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -9,11 +11,15 @@ import application.FloristeriaController;
 public class Main {
 	public static void main(String[] args) throws Exception {
 		
+		//Invocamos al controller y 
+		
 		FloristeriaController fc = new FloristeriaController();
 		int ids = 0; // comptador inicial idShop
 		String nomP = "nova Floristeria" ;// variable nom del producte
 		int qtyP; // variable quantitat de producte
 		float priceP; // variable preu producte
+        List<String> floristeriaList = new ArrayList<String>();
+
 		
 		String[] deco = {"plastic", "wood"};
 		
@@ -21,7 +27,6 @@ public class Main {
 
 		// Crear los objetos.
 
-		// Imprimir la lista de objetos.
 
 		String tecla;// Per continuar fent operacions
 		int opciomenu;
@@ -39,16 +44,26 @@ public class Main {
 			
 			opciomenu = opcio.nextInt();
 
+
 			if (opciomenu > 0 && opciomenu <= 5) { // Adaptar if al nombre d' opcions
 
 				switch (opciomenu) {
 				case 1://Crear Floristeria
 					ids++;
 					
+					
 					String nom=JOptionPane.showInputDialog("Introdueix nom de la Floristeria");
 					fc.createFloristeria(ids, nom);
 					
 					System.out.println("Floristeria : "+ ids + " - " + nom + " CREADA !!" );
+					
+			        floristeriaList.add(nom);
+
+					//String[] floristeriaArray = new String[floristeriaList.size()];
+					//floristeriaArray = floristeriaList.toArray(floristeriaArray);
+
+			        
+
 					
 					break;
 					
@@ -56,6 +71,11 @@ public class Main {
 					
 					//int Idf = (int) JOptionPane.showInputDialog(null, "Selecciona la Floristeria :","Afegir arbre", JOptionPane.QUESTION_MESSAGE, null, platos, platos[0]); 
 					//incloure idProduct
+					Object[] floristeriaObject = floristeriaList.toArray();
+					Object store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
+							JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
+					
+					//int index = floristeriaCreada.indexOf(store);
 					nomP =JOptionPane.showInputDialog("Introdueix nom de l' Arbre :");
 					qtyP = Integer.parseInt(JOptionPane.showInputDialog("Introdueix la quantitat de " + nomP));
 					priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));
@@ -84,13 +104,11 @@ public class Main {
 					
 					//String mat = "plastic";
 					nomP =JOptionPane.showInputDialog("Introdueix nom del producte de decoració:");
-					
-
-					String mat = (String) JOptionPane.showInputDialog(null, "Selecciona el material de " + nomP,"Afegir arbre",
-							JOptionPane.QUESTION_MESSAGE, null, deco, deco[0]);
 					qtyP = Integer.parseInt(JOptionPane.showInputDialog("Introdueix la quantitat de " + nomP));
 					priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));
 					//mat = JOptionPane.showInputDialog("Introdueix material de " + nomP);
+					String mat = (String) JOptionPane.showInputDialog(null, "Selecciona el material de " + nomP,"Afegir arbre",
+							JOptionPane.QUESTION_MESSAGE, null, deco, deco[0]);
 					fc.createDecoration(priceP, nomP, qtyP, mat);
 					
 					break;
@@ -113,6 +131,9 @@ public class Main {
 
 		} while (tecla.equalsIgnoreCase("s"));
 		System.out.println ("Gracies per fer servir la nostre App");
+		
+		// Imprimir la lista de objetos.
+
 		
 		//Printar l'stock de productes.
 		

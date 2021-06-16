@@ -1,5 +1,10 @@
 package application;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
 import domain.Decoration;
 import domain.Floristeria;
 import domain.Flower;
@@ -10,6 +15,7 @@ import persistence.FloristeriaRepository;
 public class FloristeriaController {
 	
 	private FloristeriaRepository repository;
+	
 	
 	public FloristeriaController() {
 		
@@ -26,9 +32,9 @@ public class FloristeriaController {
 		}
 	}
 	
-	public void createDecoration(float price, String name, int qty,String material) throws Exception {
+	public void createDecoration(String botiga,float price, String name, int qty,String material) throws Exception {
     	try {
-	        Decoration decoration = new Decoration(price, name, qty, Decoration.getMaterial());
+	        Decoration decoration = new Decoration(botiga,price, name, qty, Decoration.getMaterial());
 	        repository.addProduct(decoration);
     	} catch (Exception e) {
 			e.printStackTrace();
@@ -36,9 +42,9 @@ public class FloristeriaController {
 		}
 	}
 	
-	public void createFlower(float price, String name, int qty, String color) throws Exception {
+	public void createFlower(String botiga,float price, String name, int qty, String color) throws Exception {
     	try {
-	        Flower flower = new Flower(price, name, qty, Flower.getColor());
+	        Flower flower = new Flower(botiga,price, name, qty, Flower.getColor());
 	        repository.addProduct(flower);
     	} catch (Exception e) {
 			e.printStackTrace();
@@ -46,9 +52,9 @@ public class FloristeriaController {
 		}
 	}
 	
-	public void createTree(float price, String name, int qty, float height) throws Exception {
+	public void createTree(String botiga,float price, String name, int qty, float height) throws Exception {
     	try {
-    		Tree tree = new Tree(price, name, qty, Tree.getHeight());
+    		Tree tree = new Tree(botiga,price, name, qty, Tree.getHeight());
 	        repository.addProduct(tree);
     	} catch (Exception e) {
 			e.printStackTrace();
@@ -60,7 +66,7 @@ public class FloristeriaController {
         StringBuilder sb = new StringBuilder();
         for (Product product : repository.getAllProducts())
             sb.append(product.getName()).append("\n\n");
-        return sb.toString();
+        	return sb.toString();
     }
     
     public String stock() {
@@ -73,5 +79,14 @@ public class FloristeriaController {
     	return null;
     	
     }
+    
+   /* public String selectbotiga(Object stores) {
+    	List<String> floristeriaList = new ArrayList<String>();
+    	Object[] floristeriaObject = floristeriaList.toArray();
+		Object store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
+				JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
+    	
+		return (String) store;
+    }*/
 
 }

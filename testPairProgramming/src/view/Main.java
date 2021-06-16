@@ -18,7 +18,9 @@ public class Main {
 		String nomP = "nova Floristeria" ;// variable nom del producte
 		int qtyP; // variable quantitat de producte
 		float priceP; // variable preu producte
+		//Arraylist floristeries per a selecionar botiga
         List<String> floristeriaList = new ArrayList<String>();
+        Object[] floristeriaObject = floristeriaList.toArray();
 
 		
 		String[] deco = {"plastic", "wood"};
@@ -69,9 +71,8 @@ public class Main {
 					
 				case 2://Afegir arbre
 					
-					//int Idf = (int) JOptionPane.showInputDialog(null, "Selecciona la Floristeria :","Afegir arbre", JOptionPane.QUESTION_MESSAGE, null, platos, platos[0]); 
 					//incloure idProduct
-					Object[] floristeriaObject = floristeriaList.toArray();
+					//Object[] floristeriaObject = floristeriaList.toArray();
 					Object store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
 							JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
 					
@@ -80,7 +81,7 @@ public class Main {
 					qtyP = Integer.parseInt(JOptionPane.showInputDialog("Introdueix la quantitat de " + nomP));
 					priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));
 					float alcada = Float.parseFloat(JOptionPane.showInputDialog("Introdueix l' alçada de " + nomP));
-					fc.createTree(priceP, nomP, qtyP, alcada);
+					fc.createTree((String) store,priceP, nomP, qtyP, alcada);
 					
 					System.out.println ("Arbre creat ");
 					
@@ -88,17 +89,25 @@ public class Main {
 					
 				case 3://Afegir flor
 					
-					//int Idf = (int) JOptionPane.showInputDialog(null, "Selecciona la Floristeria :","Afegir arbre", JOptionPane.QUESTION_MESSAGE, null, platos, platos[0]); 
+					//Object stores = null;
+					//fc.selectbotiga(stores);
+					
+					store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
+							JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
+										 
 					//incloure idProduct
 					nomP =JOptionPane.showInputDialog("Introdueix nom de la flor:");
 					qtyP = Integer.parseInt(JOptionPane.showInputDialog("Introdueix la quantitat de " + nomP));
 					priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));
 					String color = JOptionPane.showInputDialog("Introdueix color de " + nomP);
-					fc.createFlower(priceP, color, qtyP, nomP);
+					fc.createFlower((String) store,priceP, color, qtyP, nomP);
 					System.out.println ("Flor creada ");
 					break;
 					
 				case 4://Afegir decoració
+					
+					store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
+							JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
 					
 					//incloure idProduct
 					
@@ -109,13 +118,18 @@ public class Main {
 					//mat = JOptionPane.showInputDialog("Introdueix material de " + nomP);
 					String mat = (String) JOptionPane.showInputDialog(null, "Selecciona el material de " + nomP,"Afegir arbre",
 							JOptionPane.QUESTION_MESSAGE, null, deco, deco[0]);
-					fc.createDecoration(priceP, nomP, qtyP, mat);
+					//fc.createDecoration((String)store,priceP, nomP, qtyP, mat);
 					
 					break;
 					
 				case 5: // Stock
-					fc.getAllProducts();
+
+					System.out.println ("Stock material");
+					
 					fc.stock();
+					
+					String allProducts=fc.getAllProducts();
+					System.out.println("PRODUCTES EN STOCK:\n\n" + allProducts + " \n");
 					break;
 				
 				}

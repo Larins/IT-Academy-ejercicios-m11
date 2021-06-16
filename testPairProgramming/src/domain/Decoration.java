@@ -4,8 +4,8 @@ public class Decoration extends Product {
 	
 	protected static String material;
 	
-	public Decoration(float price, String name, int qty, String material) throws Exception {
-		super(price, name, qty);
+	public Decoration(String botiga,float price, String name, int qty, String material) throws Exception {
+		super(botiga,price, name, qty);
 		//if((! material.equalsIgnoreCase("plastic") || ! material.equalsIgnoreCase("wood"))) throw new Exception(" El material debe ser 'plastic' o 'wood'.");
 		this.material = material;
 	}
@@ -16,6 +16,11 @@ public class Decoration extends Product {
 
 	public void setMaterial() {
 		this.material = material;
+	}
+	
+	@Override
+	public String toString() {
+		return "Flower [Floristeria " + botiga + ", price=" + price + ", name=" + name + ", qty=" + qty +" material: "+ material+" ]";
 	}
 
 }

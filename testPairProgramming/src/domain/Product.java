@@ -2,75 +2,72 @@ package domain;
 
 public abstract class Product {
 
-		protected int idFloristeria;
-		protected int idProduct;
-		protected float price;
-		protected String name;
-		protected int qty;
-		
-		private static int COUNTER_PRODUCTS = 1;
-		
-		public Product(float price, String name, int qty) {
-			this.price = price;
-			this.name = name;
-			this.qty = qty;
+	protected static Object botiga;
+	protected int idProduct;
+	protected float price;
+	protected String name;
+	protected int qty;
 
-			idProduct = COUNTER_PRODUCTS;
-			COUNTER_PRODUCTS++;
-			
-		
-		}
-		
-		//Getter Setters
-		
-		public int getIdFloristeria() {
-			return idFloristeria;
-		}
+	private static int COUNTER_PRODUCTS = 1;
 
-		public void setIdFloristeria(int idFloristeria) {
-			this.idFloristeria = idFloristeria;
-		}
+	public Product(String botiga,float price, String name, int qty) {
+		this.price = price;
+		this.name = name;
+		this.qty = qty;
 
-		public int getIdProduct() {
-			return idProduct;
-		}
+		idProduct = COUNTER_PRODUCTS;
+		COUNTER_PRODUCTS++;
 
-		
+	}
 
-		public void setIdProduct(int id) {
-			this.idProduct = idProduct;
-		}
+	// Getter Setters
 
-		public float getPrice() {
-			return price;
-		}
+	public static Object getBotiga() {
+		return botiga;
+	}
 
-		public void setPrice(float price) {
-			this.price = price;
-		}
+	public void setBotiga(Object botiga) {
+		this.botiga = botiga;
+	}
 
-		public String getName() {
-			return name;
-		}
+	public int getIdProduct() {
+		return idProduct;
+	}
 
-		public void setName(String name) {
-			this.name = name;
-		}
+	public void setIdProduct(int id) {
+		this.idProduct = idProduct;
+	}
 
-		public int getQty() {
-			return qty;
-		}
+	public float getPrice() {
+		return price;
+	}
 
-		public void setQty(int qty) {
-			this.qty = qty;
-		}
+	public void setPrice(float price) {
+		this.price = price;
+	}
 
-		public static int getCOUNTER_PRODUCTS() {
-			return COUNTER_PRODUCTS;
-		}
+	public String getName() {
+		return name;
+	}
 
-		public static void setCOUNTER_PRODUCTS(int cOUNTER_PRODUCTS) {
-			COUNTER_PRODUCTS = cOUNTER_PRODUCTS;
-		}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getQty() {
+		return qty;
+	}
+
+	public void setQty(int qty) {
+		this.qty = qty;
+	}
+
+	public static int getCOUNTER_PRODUCTS() {
+		return COUNTER_PRODUCTS;
+	}
+
+	public static void setCOUNTER_PRODUCTS(int cOUNTER_PRODUCTS) {
+		COUNTER_PRODUCTS = cOUNTER_PRODUCTS;
+	}
 
 }

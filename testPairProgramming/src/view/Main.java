@@ -84,7 +84,7 @@ public class Main {
 					
 					nomP =JOptionPane.showInputDialog("Introdueix nom del producte de decoració:");
 					
-					String mat = "platic";
+					String mat = "plastic";
 					//String mat = JOptionPane.showInputDialog(null, "Selecciona el material de " + nomP,"Afegir arbre", JOptionPane.QUESTION_MESSAGE, null, deco, deco[]);
 					qtyP = Integer.parseInt(JOptionPane.showInputDialog("Introdueix la quantitat de " + nomP));
 					priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));

@@ -14,7 +14,7 @@ public class Decoration extends Product {
 		return material;
 	}
 
-	public void setMaterial(String material) {
+	public void setMaterial() {
 		this.material = material;
 	}
 

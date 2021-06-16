@@ -32,7 +32,7 @@ public class Main {
 			System.out.println("-------------------------------------");
 			System.out.println("1  - Crear Floristeria");
 			System.out.println("2  - Afegir Arbre");
-			System.out.println("2  - Afegir Flor");
+			System.out.println("3  - Afegir Flor");
 			System.out.println("4  - Afegir Decoració");
 			System.out.println("5  - Stock");
 			//System.out.println("5  - Sortir");
@@ -82,12 +82,14 @@ public class Main {
 					
 					//incloure idProduct
 					
+					String mat = "plastic";
 					nomP =JOptionPane.showInputDialog("Introdueix nom del producte de decoració:");
 					
-					String mat = "platic";
+					
 					//String mat = JOptionPane.showInputDialog(null, "Selecciona el material de " + nomP,"Afegir arbre", JOptionPane.QUESTION_MESSAGE, null, deco, deco[]);
 					qtyP = Integer.parseInt(JOptionPane.showInputDialog("Introdueix la quantitat de " + nomP));
 					priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));
+					//mat = JOptionPane.showInputDialog("Introdueix material de " + nomP);
 					fc.createDecoration(priceP, nomP, qtyP, mat);
 					
 					break;
@@ -110,6 +112,11 @@ public class Main {
 
 		} while (tecla.equalsIgnoreCase("s"));
 		System.out.println ("Gracies per fer servir la nostre App");
+		
+		//Printar l'stock de productes.
+		
+		//String allProducts=fc.getAllProducts();
+		//System.out.println("PRODUCTES EN STOCK:\n\n" + allProducts + " \n");
 	}
 
 }

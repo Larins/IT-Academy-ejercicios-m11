@@ -12,7 +12,7 @@ public class Flower extends Product {
 		this.color = color;
 	}
 	//Getter Setter
-	public String getColor() {
+	public static String getColor() {
 		return color;
 	}
 

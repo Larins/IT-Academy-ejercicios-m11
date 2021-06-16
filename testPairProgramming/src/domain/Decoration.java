@@ -10,7 +10,7 @@ public class Decoration extends Product {
 		this.material = material;
 	}
 	//Getter Setter
-	public String getMaterial() {
+	public static String getMaterial() {
 		return material;
 	}
 

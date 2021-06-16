@@ -12,7 +12,7 @@ public class Tree extends Product {
 		this.height = height;
 	}
 //Getter setter
-	public float getHeight() {
+	public static float getHeight() {
 		return height;
 	}
 

@@ -19,5 +19,10 @@ public class Flower extends Product {
 	public void setColor(String color) {
 		this.color = color;
 	}
+	@Override
+	public String toString() {
+		return "Flower [idFloristeria=" + idFloristeria + ", idProduct=" + idProduct + ", price=" + price + ", name="
+				+ name + ", qty=" + qty + "]";
+	}
 
 }

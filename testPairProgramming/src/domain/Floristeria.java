@@ -22,4 +22,9 @@ public class Floristeria {
 	public void setName(String name) {
 		this.name = name;
 	}
+	@Override
+	public String toString() {
+		return "Floristeria [idShop=" + idShop + ", name=" + name + "]\n";
+	}
+	
 }

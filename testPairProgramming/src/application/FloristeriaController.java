@@ -62,5 +62,19 @@ public class FloristeriaController {
             sb.append(product.getName()).append("\n\n");
         return sb.toString();
     }
+    
+    public String stock() {
+    	
+       	
+    	System.out.println(repository.getAllFloristeries());
+    	System.out.println(repository.getAllProducts());
+    	/*for (Floristeria flor :floristeria) {
+    		
+    		
+    	}*/
+    	
+    	return null;
+    	
+    }
 
 }

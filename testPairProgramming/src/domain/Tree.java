@@ -19,5 +19,10 @@ public class Tree extends Product {
 	public void setHeight(float height) {
 		this.height = height;
 	}
+	@Override
+	public String toString() {
+		return "Tree [idFloristeria=" + idFloristeria + ", idProduct=" + idProduct + ", price=" + price + ", name="
+				+ name + ", qty=" + qty + "]";
+	}
 
 }

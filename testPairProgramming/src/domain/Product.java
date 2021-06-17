@@ -11,6 +11,7 @@ public abstract class Product {
 	private static int COUNTER_PRODUCTS = 1;
 
 	public Product(String botiga,float price, String name, int qty) {
+		Product.botiga = botiga;
 		this.price = price;
 		this.name = name;
 		this.qty = qty;
@@ -27,7 +28,7 @@ public abstract class Product {
 	}
 
 	public void setBotiga(Object botiga) {
-		this.botiga = botiga;
+		Product.botiga = botiga;
 	}
 
 	public int getIdProduct() {

@@ -3,7 +3,7 @@ package domain;
 public class Floristeria {
 	
 	protected int idShop;
-	String name;
+	public String name;
 	
 	public Floristeria(int idShop, String name) {
 		super();

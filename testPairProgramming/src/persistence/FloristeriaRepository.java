@@ -9,23 +9,32 @@ public class FloristeriaRepository {
 
 	private static List<Floristeria> floristeries = new ArrayList<>();
 	private static List<Product> products = new ArrayList<>();
-	private static List<Product> flowers
-	= new ArrayList<>();
+	private static List<Tree> trees = new ArrayList<>();
+	private static List<Flower> flowers = new ArrayList<>();
+	private static List<Decoration> decorations = new ArrayList<>();
 
 
 	public FloristeriaRepository() {
 	}
-
+	
 	public List<Floristeria> getAllFloristeries() {
 		return new ArrayList<>(floristeries);
 	}
-
+	
 	public List<Product> getAllProducts() {
 		return new ArrayList<>(products);
 	}
+
+	public List<Tree> getAllTrees() {
+		return new ArrayList<>(trees);
+	}
 	
-	public List<Product> getAllFlowers() {
+	public List<Flower> getAllFlowers() {
 		return new ArrayList<>(flowers);
+	}
+	
+	public List<Decoration> getAllDecorations() {
+		return new ArrayList<>(decorations);
 	}
 
 	public void addFloristeria(Floristeria floristeria) throws Exception {

@@ -77,7 +77,7 @@ public class Main {
 					Object store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
 							JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
 					
-					//int index = floristeriaCreada.indexOf(store);
+					int index = floristeriaObject.length;
 					nomP =JOptionPane.showInputDialog("Introdueix nom de l' Arbre :");
 					qtyP = Integer.parseInt(JOptionPane.showInputDialog("Introdueix la quantitat de " + nomP));
 					priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));
@@ -101,7 +101,7 @@ public class Main {
 					qtyP = Integer.parseInt(JOptionPane.showInputDialog("Introdueix la quantitat de " + nomP));
 					priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));
 					String color = JOptionPane.showInputDialog("Introdueix color de " + nomP);
-					fc.createFlower((String) store,priceP, nomP, qtyP, color);
+					fc.createFlower((String) store, priceP, nomP, qtyP, color);
 					System.out.println ("Flor creada ");
 					break;
 					
@@ -119,20 +119,29 @@ public class Main {
 					//mat = JOptionPane.showInputDialog("Introdueix material de " + nomP);
 					String mat = (String) JOptionPane.showInputDialog(null, "Selecciona el material de " + nomP,"Afegir arbre",
 							JOptionPane.QUESTION_MESSAGE, null, deco, deco[0]);
-					//fc.createDecoration((String)store,priceP, nomP, qtyP, mat);
+					fc.createDecoration((String)store,priceP, nomP, qtyP, mat);
 					
 					break;
 					
 				case 5: // Stock
 
-					System.out.println ("Stock material");
+					//System.out.println ("Stock material");
+					fc.stock();
 					
 					//Método 1 para printar el stock
-					//fc.stock();
-					//String allProducts=fc.getAllProducts();
+					String allProducts=fc.getAllProducts();
 					
 					//Método 2 para printar el stock
-					System.out.println("PRODUCTES EN STOCK:\n\n" + fc.getAllProducts() + " \n");
+					System.out.println("\nPRODUCTES EN STOCK:\n" + fc.getAllProducts() + "\n");
+					
+					//Método 3 para printar el stock
+					
+					/*System.out.println("\nPRODUCTES EN STOCK:\n");
+					System.out.println("\nARBRES\n" + fc.getAllTrees()+"\n");
+					System.out.println("\nFLORS\n" + fc.getAllFlowers()+"\n");
+					System.out.println("\nDECORACIONS\n" + fc.getAllDecorations()+"\n");*/
+
+					
 					break;
 				
 				}

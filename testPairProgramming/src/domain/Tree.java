@@ -7,7 +7,7 @@ public class Tree extends Product {
 	public Tree(String botiga, float price, String name, int qty, float height) {
 		super(botiga, price, name, qty);
 
-		this.height = height;
+		Tree.height = height;
 		// TODO Auto-generated constructor stub
 	}
 

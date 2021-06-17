@@ -72,7 +72,8 @@ public class Main {
 				case 2://Afegir arbre
 					
 					//incloure idProduct
-					//Object[] floristeriaObject = floristeriaList.toArray();
+					//List<String> floristeriaList = new ArrayList<String>();
+					floristeriaObject = floristeriaList.toArray();
 					Object store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
 							JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
 					
@@ -91,7 +92,7 @@ public class Main {
 					
 					//Object stores = null;
 					//fc.selectbotiga(stores);
-					
+					floristeriaObject = floristeriaList.toArray();
 					store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
 							JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
 										 
@@ -126,10 +127,14 @@ public class Main {
 
 					System.out.println ("Stock material");
 					
+					
 					fc.stock();
 					
+					
 					String allProducts=fc.getAllProducts();
-					System.out.println("PRODUCTES EN STOCK:\n\n" + allProducts + " \n");
+					//String allFloristeries=fc.getAllFloristeries();
+					
+					//System.out.println("PRODUCTES EN STOCK:\n\n" + allProducts + " \n");
 					break;
 				
 				}

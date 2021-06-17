@@ -65,7 +65,7 @@ public class FloristeriaController {
     public String getAllProducts() {
         StringBuilder sb = new StringBuilder();
         for (Product product : repository.getAllProducts())
-            sb.append(product.getName()).append("\n\n");
+            sb.append(Product.getBotiga()).append("\n\t").append(product.getName()).append("\n\t").append(product.getPrice()).append("\n\t").append(product.getQty()).append("\n\t").append(Flower.getColor()).append("\n\t");
         	return sb.toString();
     }
     

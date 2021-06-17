@@ -127,13 +127,12 @@ public class Main {
 
 					System.out.println ("Stock material");
 					
+					//Método 1 para printar el stock
+					//fc.stock();
+					//String allProducts=fc.getAllProducts();
 					
-					fc.stock();
-					
-					
-					String allProducts=fc.getAllProducts();
-					
-					//System.out.println("PRODUCTES EN STOCK:\n\n" + allProducts + " \n");
+					//Método 2 para printar el stock
+					System.out.println("PRODUCTES EN STOCK:\n\n" + fc.getAllProducts() + " \n");
 					break;
 				
 				}

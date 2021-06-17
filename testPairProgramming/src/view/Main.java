@@ -101,7 +101,7 @@ public class Main {
 					qtyP = Integer.parseInt(JOptionPane.showInputDialog("Introdueix la quantitat de " + nomP));
 					priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));
 					String color = JOptionPane.showInputDialog("Introdueix color de " + nomP);
-					fc.createFlower((String) store,priceP, color, qtyP, nomP);
+					fc.createFlower((String) store,priceP, nomP, qtyP, color);
 					System.out.println ("Flor creada ");
 					break;
 					
@@ -132,7 +132,6 @@ public class Main {
 					
 					
 					String allProducts=fc.getAllProducts();
-					//String allFloristeries=fc.getAllFloristeries();
 					
 					//System.out.println("PRODUCTES EN STOCK:\n\n" + allProducts + " \n");
 					break;
@@ -140,7 +139,7 @@ public class Main {
 				}
 
 			} else {
-				System.out.println("Introdueïx una opció correcte");
+				System.out.println("Introdueïx una opció correcta");
 			}
 
 			System.out.println("_______________________________________");
@@ -150,7 +149,7 @@ public class Main {
 			tecla = opcio.next();
 
 		} while (tecla.equalsIgnoreCase("s"));
-		System.out.println ("Gracies per fer servir la nostre App");
+		System.out.println ("Gracies per fer servir la nostra App");
 		
 		// Imprimir la lista de objetos.
 

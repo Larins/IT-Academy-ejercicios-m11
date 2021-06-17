@@ -9,6 +9,9 @@ public class FloristeriaRepository {
 
 	private static List<Floristeria> floristeries = new ArrayList<>();
 	private static List<Product> products = new ArrayList<>();
+	private static List<Product> flowers
+	= new ArrayList<>();
+
 
 	public FloristeriaRepository() {
 	}
@@ -19,6 +22,10 @@ public class FloristeriaRepository {
 
 	public List<Product> getAllProducts() {
 		return new ArrayList<>(products);
+	}
+	
+	public List<Product> getAllFlowers() {
+		return new ArrayList<>(flowers);
 	}
 
 	public void addFloristeria(Floristeria floristeria) throws Exception {

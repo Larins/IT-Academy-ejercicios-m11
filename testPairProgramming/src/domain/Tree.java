@@ -18,7 +18,7 @@ public class Tree extends Product {
 		return height;
 	}
 
-	public void setHeight(float height) {
+	public void setHeight(int height) {
 		this.height = height;
 	}
 

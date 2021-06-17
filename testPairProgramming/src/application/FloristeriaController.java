@@ -44,7 +44,7 @@ public class FloristeriaController {
 	
 	public void createFlower(String botiga,float price, String name, int qty, String color) throws Exception {
     	try {
-	        Flower flower = new Flower(botiga,price, name, qty, Flower.getColor());
+	        Flower flower = new Flower(botiga,price, name, qty, color);
 	        repository.addProduct(flower);
     	} catch (Exception e) {
 			e.printStackTrace();
@@ -54,7 +54,7 @@ public class FloristeriaController {
 	
 	public void createTree(String botiga,float price, String name, int qty, float height) throws Exception {
     	try {
-    		Tree tree = new Tree(botiga,price, name, qty, Tree.getHeight());
+    		Tree tree = new Tree(botiga,price, name, qty, height);
 	        repository.addProduct(tree);
     	} catch (Exception e) {
 			e.printStackTrace();
@@ -69,11 +69,19 @@ public class FloristeriaController {
         	return sb.toString();
     }
     
+    public String getAllFlowers() {
+        StringBuilder sb = new StringBuilder();
+        for (Product flower : repository.getAllFlowers())
+            sb.append(flower.getName()).append("\n\n");
+        	return sb.toString();
+    }
+    
     public String stock() {
     	
        	
     	System.out.println(repository.getAllFloristeries());
     	System.out.println(repository.getAllProducts());
+    	System.out.println(repository.getAllFlowers());
     	
     	
     	return null;

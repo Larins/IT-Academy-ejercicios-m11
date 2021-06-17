@@ -13,6 +13,7 @@ public class Flower extends Product {
 	}
 
 	// Getter Setter
+	
 	public static String getColor() {
 		return color;
 	}

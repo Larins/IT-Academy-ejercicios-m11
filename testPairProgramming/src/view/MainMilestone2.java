@@ -119,6 +119,7 @@ public class MainMilestone2 {
 
 						System.out.println("Stock Floristeries i productes\n");
 						fc.stock();
+
 						break;
 
 					case 6: // Stock per botiga
@@ -129,12 +130,18 @@ public class MainMilestone2 {
 						store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria",
 								"Seleccionar floristeria", JOptionPane.QUESTION_MESSAGE, null, floristeriaObject,
 								floristeriaObject[0]);
-						if (Floristeria.getName().equalsIgnoreCase((String) store)) {
-							fc.stock();}
-						break;
-					
 
-				}} else {
+						if (Floristeria.getName().equalsIgnoreCase((String) store)) {
+
+							System.out.println("Floristeria Seleccionada");
+							fc.stockbotiga();
+						}else {
+							System.out.println("No Seleccionat");
+						}
+						break;
+
+					}
+				} else {
 					System.out.println("Introdueïx una opció correcta");
 				}
 			} catch (ArrayIndexOutOfBoundsException e) {
@@ -153,6 +160,5 @@ public class MainMilestone2 {
 		} while (tecla.equalsIgnoreCase("s"));
 		System.out.println("Gracies per fer servir la nostra App");
 
-	
-		
-}}
+	}
+}

@@ -3,7 +3,7 @@ package domain;
 public class Floristeria {
 	
 	protected int idShop;
-	public String name;
+	public static String name;
 	
 	public Floristeria(int idShop, String name) {
 		super();
@@ -16,7 +16,7 @@ public class Floristeria {
 	public void setIdShop(int idShop) {
 		this.idShop = idShop;
 	}
-	public String getName() {
+	public static String getName() {
 		return name;
 	}
 	public void setName(String name) {

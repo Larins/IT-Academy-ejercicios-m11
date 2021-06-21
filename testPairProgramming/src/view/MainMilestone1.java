@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 import application.FloristeriaController;
 
-public class Main {
+public class MainMilestone1 {
 	public static void main(String[] args) throws Exception {
 		
 		//Invocamos al controller

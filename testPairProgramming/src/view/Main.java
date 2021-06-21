@@ -11,7 +11,7 @@ import application.FloristeriaController;
 public class Main {
 	public static void main(String[] args) throws Exception {
 		
-		//Invocamos al controller y 
+		//Invocamos al controller
 		
 		FloristeriaController fc = new FloristeriaController();
 		int ids = 0; // comptador inicial idShop
@@ -42,9 +42,11 @@ public class Main {
 			System.out.println("3  - Afegir Flor");
 			System.out.println("4  - Afegir Decoració");
 			System.out.println("5  - Stock");
-			//System.out.println("5  - Sortir");
+
+			//System.out.println("6  - Sortir");
 			try {
 				opciomenu = opcio.nextInt();
+
 			
 			
 
@@ -74,7 +76,6 @@ public class Main {
 				case 2://Afegir arbre
 					
 					//incloure idProduct
-					//List<String> floristeriaList = new ArrayList<String>();
 					floristeriaObject = floristeriaList.toArray();
 					Object store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
 							JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
@@ -92,8 +93,6 @@ public class Main {
 					
 				case 3://Afegir flor
 					
-					//Object stores = null;
-					//fc.selectbotiga(stores);
 					floristeriaObject = floristeriaList.toArray();
 					store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
 							JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
@@ -113,12 +112,9 @@ public class Main {
 							JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
 					
 					//incloure idProduct
-					
-					//String mat = "plastic";
 					nomP =JOptionPane.showInputDialog("Introdueix nom del producte de decoració:");
 					qtyP = Integer.parseInt(JOptionPane.showInputDialog("Introdueix la quantitat de " + nomP));
 					priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));
-					//mat = JOptionPane.showInputDialog("Introdueix material de " + nomP);
 					String mat = (String) JOptionPane.showInputDialog(null, "Selecciona el material de " + nomP,"Afegir material",
 							JOptionPane.QUESTION_MESSAGE, null, deco, deco[0]);
 					fc.createDecoration((String)store,priceP, nomP, qtyP,mat);
@@ -126,26 +122,11 @@ public class Main {
 					break;
 					
 				case 5: // Stock
+					
+					//Imprimir lista de floristerias y productos
 
-					//System.out.println ("Stock material");
-					System.out.println("Stock Floristeries i productes");
+					System.out.println("Stock Floristeries i productes\n");
 					fc.stock();
-					
-					//Método 1 para printar el stock
-					//System.out.print("___________________METODE 1");
-					//String allProducts=fc.getAllProducts();
-					
-					//Método 2 para printar el stock
-					//System.out.print("___________________METODE 2");
-					//System.out.println("\nPRODUCTES EN STOCK:\n" + fc.getAllProducts() + "\n");
-					
-					//Método 3 para printar el stock
-					
-					//System.out.print("___________________METODE 3");
-					//System.out.println("\nPRODUCTES EN STOCK:\n");
-					//System.out.println("\nARBRES\n" + fc.getAllTrees()+"\n");
-					//System.out.println("\nFLORS\n" + fc.getAllFlowers()+"\n");
-					//System.out.println("\nDECORACIONS\n" + fc.getAllDecorations()+"\n");
 
 					
 					break;
@@ -168,13 +149,6 @@ public class Main {
 		} while (tecla.equalsIgnoreCase("s"));
 		System.out.println ("Gracies per fer servir la nostra App");
 		
-		// Imprimir la lista de objetos.
-
-		
-		//Printar l'stock de productes.
-		
-		//String allProducts=fc.getAllProducts();
-		//System.out.println("PRODUCTES EN STOCK:\n\n" + allProducts + " \n");
 	}
 
 }

@@ -6,7 +6,6 @@ public class Decoration extends Product {
 	
 	public Decoration(String botiga,float price, String name, int qty, String material) throws Exception {
 		super(botiga,price, name, qty);
-		//if((! material.equalsIgnoreCase("plastic") || ! material.equalsIgnoreCase("wood"))) throw new Exception(" El material debe ser 'plastic' o 'wood'.");
 		Decoration.material = material;
 	}
 	//Getter Setter

@@ -11,8 +11,6 @@ public class Tree extends Product {
 		// TODO Auto-generated constructor stub
 	}
 
-	// Falta Incloure ID Floristeria
-
 //Getter setter
 	public static float getHeight() {
 		return height;

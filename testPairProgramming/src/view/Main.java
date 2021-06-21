@@ -132,14 +132,16 @@ public class Main {
 					String allProducts=fc.getAllProducts();
 					
 					//Método 2 para printar el stock
+					System.out.print("___________________");
 					System.out.println("\nPRODUCTES EN STOCK:\n" + fc.getAllProducts() + "\n");
 					
 					//Método 3 para printar el stock
 					
-					/*System.out.println("\nPRODUCTES EN STOCK:\n");
+					System.out.print("___________________");
+					System.out.println("\nPRODUCTES EN STOCK:\n");
 					System.out.println("\nARBRES\n" + fc.getAllTrees()+"\n");
 					System.out.println("\nFLORS\n" + fc.getAllFlowers()+"\n");
-					System.out.println("\nDECORACIONS\n" + fc.getAllDecorations()+"\n");*/
+					System.out.println("\nDECORACIONS\n" + fc.getAllDecorations()+"\n");
 
 					
 					break;

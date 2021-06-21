@@ -136,8 +136,12 @@ public class Main {
 			} else {
 				System.out.println("Introdueïx una opció correcta");
 			}
-			}catch (Exception e) {
-				System.out.println("Valor incorrecte");
+			}catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println("No has creat cap floristeria encara !!!!");
+			
+				
+			}catch (NumberFormatException n) {
+				System.out.println ("Valor incorrecte, ha de ser un nombre");
 			}
 
 			System.out.println("_______________________________________");

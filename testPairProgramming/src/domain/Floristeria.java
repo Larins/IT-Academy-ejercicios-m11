@@ -1,9 +1,14 @@
 package domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Floristeria {
 	
 	protected int idShop;
 	public static String name;
+	private static List<Product> products = new ArrayList<Product>(); //nuevo
+
 	
 	public Floristeria(int idShop, String name) {
 		super();
@@ -24,7 +29,7 @@ public class Floristeria {
 	}
 	@Override
 	public String toString() {
-		return "Floristeria\n\tID botiga :" + idShop + "\n\tNom: " + name + "\n\n";
+		return "Floristeria\n\tID botiga:" + idShop + "\n\tNom: " + name + "\n\n";
 	}
 	
 }

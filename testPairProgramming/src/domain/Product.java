@@ -1,5 +1,6 @@
 package domain;
 
+
 public abstract class Product {
 
 	protected static Object botiga;
@@ -8,6 +9,7 @@ public abstract class Product {
 	protected String name;
 	protected int qty;
 
+
 	private static int COUNTER_PRODUCTS = 1;
 
 	public Product(String botiga,float price, String name, int qty) throws Exception {		
@@ -15,6 +17,7 @@ public abstract class Product {
 		this.price = price;
 		this.name = name;
 		this.qty = qty;
+
 
 		idProduct = COUNTER_PRODUCTS;
 		COUNTER_PRODUCTS++;
@@ -71,5 +74,6 @@ public abstract class Product {
 	public static void setCOUNTER_PRODUCTS(int cOUNTER_PRODUCTS) {
 		COUNTER_PRODUCTS = cOUNTER_PRODUCTS;
 	}
+	
 
 }

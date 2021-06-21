@@ -39,13 +39,13 @@ public class FloristeriaRepository {
 
 	public void addFloristeria(Floristeria floristeria) throws Exception {
 		if (floristeria == null)
-			throw new Exception();
+			throw new Exception("La floristeria no pot estar buida.");
 		floristeries.add(floristeria);
 	}
 
 	public void addProduct(Product product) throws Exception {
 		if (product == null)
-			throw new Exception();
+			throw new Exception("El producte no pot estar buit.");
 		products.add(product);
 	}
 

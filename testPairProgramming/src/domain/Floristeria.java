@@ -24,7 +24,7 @@ public class Floristeria {
 	}
 	@Override
 	public String toString() {
-		return "Floristeria [idShop=" + idShop + ", name=" + name + "]\n";
+		return "Floristeria\n\tID botiga :" + idShop + "\n\tNom: " + name + "\n\n";
 	}
 	
 }

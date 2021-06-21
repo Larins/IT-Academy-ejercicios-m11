@@ -126,22 +126,24 @@ public class Main {
 				case 5: // Stock
 
 					//System.out.println ("Stock material");
+					System.out.print("___________________METODE 0");
 					fc.stock();
 					
 					//Método 1 para printar el stock
-					String allProducts=fc.getAllProducts();
+					//System.out.print("___________________METODE 1");
+					//String allProducts=fc.getAllProducts();
 					
 					//Método 2 para printar el stock
-					System.out.print("___________________");
-					System.out.println("\nPRODUCTES EN STOCK:\n" + fc.getAllProducts() + "\n");
+					//System.out.print("___________________METODE 2");
+					//System.out.println("\nPRODUCTES EN STOCK:\n" + fc.getAllProducts() + "\n");
 					
 					//Método 3 para printar el stock
 					
-					System.out.print("___________________");
-					System.out.println("\nPRODUCTES EN STOCK:\n");
-					System.out.println("\nARBRES\n" + fc.getAllTrees()+"\n");
-					System.out.println("\nFLORS\n" + fc.getAllFlowers()+"\n");
-					System.out.println("\nDECORACIONS\n" + fc.getAllDecorations()+"\n");
+					//System.out.print("___________________METODE 3");
+					//System.out.println("\nPRODUCTES EN STOCK:\n");
+					//System.out.println("\nARBRES\n" + fc.getAllTrees()+"\n");
+					//System.out.println("\nFLORS\n" + fc.getAllFlowers()+"\n");
+					//System.out.println("\nDECORACIONS\n" + fc.getAllDecorations()+"\n");
 
 					
 					break;

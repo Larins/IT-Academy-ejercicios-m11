@@ -24,8 +24,8 @@ public class Tree extends Product {
 
 	@Override
 	public String toString() {
-		return "Tree [Floristeria=" + botiga + ", idProduct=" + idProduct + ", price=" + price + ", name=" + name
-				+ ", qty=" + qty + " height =" + height + "]";
+		return "\nTree \n\tFloristeria: " + botiga + "\n\tNom: " + name + "\n\tAlçada: "
+				+ height + "\n\tPreu: " + price +  "\n\tQuantitat: " + qty + "\n";
 	}
 
 }

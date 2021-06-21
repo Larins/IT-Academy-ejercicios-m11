@@ -20,8 +20,8 @@ public class Decoration extends Product {
 	
 	@Override
 	public String toString() {
-		return "Decoration [Floristeria " + botiga + ", price=" + price + ", name=" + name 
-				+ ", qty=" + qty +" material: "+ material+" ]";
+		return "\nDecoració \n\tFloristeria: " + botiga + "\n\tNom: " + name + "\n\tMaterial: "
+				+ material + "\n\tPreu: " + price +  "\n\tQuantitat: " + qty + "\n";
 	}
 
 }

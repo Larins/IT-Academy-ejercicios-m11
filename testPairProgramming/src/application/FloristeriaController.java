@@ -86,43 +86,37 @@ public class FloristeriaController {
 	
 
 	 public String getAllTrees() {
-	        StringBuilder sb = new StringBuilder();
+	        StringBuilder sbT = new StringBuilder();
 	        for (Tree tree : repository.getAllTrees())
-	        	sb.append("\n\tBotiga: ").append(tree.getBotiga()).append("\n\tFlor: ").append(tree.getName()).append("\n\tPreu: ").append(tree.getPrice()).append("\n\tQuantitat: ").append(tree.getQty()).append("\n\tColor: ").append(Flower.getColor()).append("\n\n");
-	        	return sb.toString();
+	        	sbT.append("\n\tBotiga: ").append(tree.getBotiga()).append("\n\tFlor: ").append(tree.getName()).append("\n\tPreu: ").append(tree.getPrice()).append("\n\tQuantitat: ").append(tree.getQty()).append("\n\tAlçada: ").append(Tree.getHeight()).append("\n\n");
+	        	return sbT.toString();
 	    }
 	
 	//Get all Flowers
     
     public String getAllFlowers() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sbF = new StringBuilder();
         for (Flower flower : repository.getAllFlowers())
-        	sb.append("\n\tBotiga: ").append(flower.getBotiga()).append("\n\tFlor: ").append(flower.getName()).append("\n\tPreu: ").append(flower.getPrice()).append("\n\tQuantitat: ").append(flower.getQty()).append("\n\tColor: ").append(Flower.getColor()).append("\n\n");
-        	return sb.toString();
+        	sbF.append("\n\tBotiga: ").append(flower.getBotiga()).append("\n\tFlor: ").append(flower.getName()).append("\n\tPreu: ").append(flower.getPrice()).append("\n\tQuantitat: ").append(flower.getQty()).append("\n\tColor: ").append(Flower.getColor()).append("\n\n");
+        	return sbF.toString();
     }
     
     //Get all Decorations
     
     public String getAllDecorations() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sbD = new StringBuilder();
         for (Decoration decoration : repository.getAllDecorations())
-        	sb.append("\n\tBotiga: ").append(decoration.getBotiga()).append("\n\tFlor: ").append(decoration.getName()).append("\n\tPreu: ").append(decoration.getPrice()).append("\n\tQuantitat: ").append(decoration.getQty()).append("\n\tMaterial: ").append(((Decoration) decoration).getMaterial()).append("\n\n");
-        	return sb.toString();
+        	sbD.append("\n\tBotiga: ").append(decoration.getBotiga()).append("\n\tFlor: ").append(decoration.getName()).append("\n\tPreu: ").append(decoration.getPrice()).append("\n\tQuantitat: ").append(decoration.getQty()).append("\n\tMaterial: ").append(((Decoration) decoration).getMaterial()).append("\n\n");
+        	return sbD.toString();
     }
     
     public String stock() {
-    	
-       	
     	System.out.println(repository.getAllFloristeries());
     	System.out.println(repository.getAllProducts());
-    	System.out.println(repository.getAllTrees());
-    	System.out.println(repository.getAllFlowers());
-    	System.out.println(repository.getAllDecorations());
-
-    	
-    	
-    	return null;
-    	
+    	//System.out.println(repository.getAllTrees());
+    	//System.out.println(repository.getAllFlowers());
+    	//System.out.println(repository.getAllDecorations());
+    	return null;	
     }
     
    /* public String selectbotiga(Object stores) {

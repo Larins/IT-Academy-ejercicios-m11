@@ -4,7 +4,7 @@ public class Flower extends Product {
 
 	protected static String color;
 
-	public Flower(String botiga, float price, String name, int qty, String color) {
+	public Flower(String botiga, float price, String name, int qty, String color) throws Exception {
 		super(botiga, price, name, qty);
 
 		this.color = color;

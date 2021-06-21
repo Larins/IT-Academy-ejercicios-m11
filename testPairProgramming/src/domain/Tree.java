@@ -4,7 +4,7 @@ public class Tree extends Product {
 
 	protected static float height;
 
-	public Tree(String botiga, float price, String name, int qty, float height) {
+	public Tree(String botiga, float price, String name, int qty, float height) throws Exception {
 		super(botiga, price, name, qty);
 
 		Tree.height = height;

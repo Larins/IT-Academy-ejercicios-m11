@@ -10,7 +10,7 @@ public abstract class Product {
 
 	private static int COUNTER_PRODUCTS = 1;
 
-	public Product(String botiga,float price, String name, int qty) {
+	public Product(String botiga,float price, String name, int qty) throws Exception {		
 		Product.botiga = botiga;
 		this.price = price;
 		this.name = name;

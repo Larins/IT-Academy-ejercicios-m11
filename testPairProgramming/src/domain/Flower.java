@@ -4,8 +4,6 @@ public class Flower extends Product {
 
 	protected static String color;
 
-	// Falta Incloure ID Floristeria
-
 	public Flower(String botiga, float price, String name, int qty, String color) {
 		super(botiga, price, name, qty);
 

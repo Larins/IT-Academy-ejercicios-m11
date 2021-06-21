@@ -113,19 +113,8 @@ public class FloristeriaController {
     public String stock() {
     	System.out.println(repository.getAllFloristeries());
     	System.out.println(repository.getAllProducts());
-    	//System.out.println(repository.getAllTrees());
-    	//System.out.println(repository.getAllFlowers());
-    	//System.out.println(repository.getAllDecorations());
     	return null;	
     }
-    
-   /* public String selectbotiga(Object stores) {
-    	List<String> floristeriaList = new ArrayList<String>();
-    	Object[] floristeriaObject = floristeriaList.toArray();
-		Object store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
-				JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
-    	
-		return (String) store;
-    }*/
+   
 
 }

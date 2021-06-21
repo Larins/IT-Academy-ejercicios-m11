@@ -43,8 +43,10 @@ public class Main {
 			System.out.println("4  - Afegir Decoració");
 			System.out.println("5  - Stock");
 			//System.out.println("5  - Sortir");
+			try {
+				opciomenu = opcio.nextInt();
 			
-			opciomenu = opcio.nextInt();
+			
 
 
 			if (opciomenu > 0 && opciomenu <= 5) { // Adaptar if al nombre d' opcions
@@ -152,6 +154,9 @@ public class Main {
 
 			} else {
 				System.out.println("Introdueïx una opció correcta");
+			}
+			}catch (Exception e) {
+				System.out.println("Valor incorrecte");
 			}
 
 			System.out.println("_______________________________________");

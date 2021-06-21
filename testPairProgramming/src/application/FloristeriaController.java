@@ -62,7 +62,7 @@ public class FloristeriaController {
 	
 	public void createDecoration(String botiga, float price, String name, int qty,String material) throws Exception {
     	try {
-	        Decoration decoration = new Decoration(botiga, price, name, qty, Decoration.getMaterial());
+	        Decoration decoration = new Decoration(botiga, price, name, qty, material);
 	        repository.addProduct(decoration);
     	} catch (Exception e) {
 			e.printStackTrace();

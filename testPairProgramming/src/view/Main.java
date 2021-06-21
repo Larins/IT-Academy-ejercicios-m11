@@ -117,16 +117,16 @@ public class Main {
 					qtyP = Integer.parseInt(JOptionPane.showInputDialog("Introdueix la quantitat de " + nomP));
 					priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));
 					//mat = JOptionPane.showInputDialog("Introdueix material de " + nomP);
-					String mat = (String) JOptionPane.showInputDialog(null, "Selecciona el material de " + nomP,"Afegir arbre",
+					String mat = (String) JOptionPane.showInputDialog(null, "Selecciona el material de " + nomP,"Afegir material",
 							JOptionPane.QUESTION_MESSAGE, null, deco, deco[0]);
-					fc.createDecoration((String)store,priceP, nomP, qtyP, mat);
+					fc.createDecoration((String)store,priceP, nomP, qtyP,mat);
 					
 					break;
 					
 				case 5: // Stock
 
 					//System.out.println ("Stock material");
-					System.out.print("___________________METODE 0");
+					System.out.println("Stock Floristeries i productes");
 					fc.stock();
 					
 					//Método 1 para printar el stock

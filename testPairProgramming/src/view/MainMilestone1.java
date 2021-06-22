@@ -11,13 +11,21 @@ import application.FloristeriaController;
 public class MainMilestone1 {
 	public static void main(String[] args) throws Exception {
 		FloristeriaController fc = new FloristeriaController();//Invoquem controller
-		int ids = 0; //comptador inicial idShop
-		String nomP = "nova Floristeria" ;//variable nom del producte
-		int qtyP; //variable quantitat de producte
-		float priceP; //variable preu producte
-        List<String> floristeriaList = new ArrayList<String>();//Arraylist floristeries per a selecionar botiga
-        Object[] floristeriaObject = floristeriaList.toArray();
-		String[] deco = {"plastic", "wood"};
+		int ids = 0; //Comptador inicial idShop
+		String nomP = "nova Floristeria" ;//Variable nom del producte
+		int qtyP; //Variable quantitat de producte
+		float priceP; //Variable preu producte
+        
+		List<String> floristeriaList = new ArrayList<String>();//Arraylist floristeries per a selecionar botiga
+        Object[] floristeriaObject = floristeriaList.toArray();//Arraylist floristeries convertit en objecte
+        
+        List<String> floProList = new ArrayList<String>();//Arraylist floristeries de cada producte
+        Object[] floProObject = floProList.toArray();//Arraylist floristeries de cada producte convertit en objecte
+        
+        List<String> producteList = new ArrayList<String>();//Arraylist productes
+        Object[] producteObject = producteList.toArray();//Arraylist productes convertit en objecte
+		
+        String[] deco = {"plastic", "wood"};//Arraylist materials admesos per al producte Decoration
 		String tecla;//Per continuar fent operacions
 		int opciomenu;
 		Scanner opcio = new Scanner(System.in);
@@ -30,9 +38,10 @@ public class MainMilestone1 {
 			System.out.println("3  - Afegir Flor");
 			System.out.println("4  - Afegir Decoració");
 			System.out.println("5  - Stock");
+			System.out.println("7  - Eliminar producte");//nuevo
 			try {
 				opciomenu = opcio.nextInt();
-			if (opciomenu > 0 && opciomenu <= 5) { // Adaptar if al nombre d'opcions
+			if (opciomenu > 0 && opciomenu <= 7) { // Adaptar if al nombre d'opcions
 				switch (opciomenu) {
 				case 1://Crear Floristeria
 					ids++;
@@ -40,9 +49,11 @@ public class MainMilestone1 {
 					fc.createFloristeria(ids, nom);
 					System.out.println("Floristeria : "+ ids + " - " + nom + " CREADA !!" );
 			        floristeriaList.add(nom);
-					break;
+					floristeriaObject = floristeriaList.toArray();//nuevo
+			        break;
+					
 				case 2://Afegir arbre
-					floristeriaObject = floristeriaList.toArray();
+					//floristeriaObject = floristeriaList.toArray();
 					Object store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
 							JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
 					int index = floristeriaObject.length;
@@ -52,9 +63,16 @@ public class MainMilestone1 {
 					float alcada = Float.parseFloat(JOptionPane.showInputDialog("Introdueix l' alçada de " + nomP));
 					fc.createTree((String) store,priceP, nomP, qtyP, alcada);
 					System.out.println ("Arbre creat");
+			        producteList.add(nomP);//nuevo
+					producteObject = producteList.toArray();//nuevo
+			        floProList.add((String) store);//nuevo
+			        floProObject = floProList.toArray();//nuevo
+					System.out.println("lista productos provisional LIST: " + producteList + " - floristeria prod LIST: " + floProList);//nuevo
+					System.out.println("lista productos provisional OBJ: " + floProObject);//nuevo
+
 					break;
 				case 3://Afegir flor
-					floristeriaObject = floristeriaList.toArray();
+					//floristeriaObject = floristeriaList.toArray();
 					store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
 							JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
 					nomP =JOptionPane.showInputDialog("Introdueix nom de la flor:");
@@ -62,6 +80,7 @@ public class MainMilestone1 {
 					priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));
 					String color = JOptionPane.showInputDialog("Introdueix color de " + nomP);
 					fc.createFlower((String) store, priceP, nomP, qtyP, color);
+					
 					System.out.println ("Flor creada ");
 					break;
 				case 4://Afegir decoració
@@ -77,6 +96,15 @@ public class MainMilestone1 {
 				case 5://Printar stock: llista de floristeries y productes
 					System.out.println("Stock floristeries i productes\n");
 					fc.stock();
+					break;
+				case 7://Eliminar producte
+					Object productRemove = (String) JOptionPane.showInputDialog(null, "Selecciona el producte a eliminar","Eliminar producte",
+							JOptionPane.QUESTION_MESSAGE, null, producteObject, producteObject[0]);
+					floProList.remove(producteList.indexOf(productRemove));
+					producteList.remove(producteList.indexOf(productRemove));
+					System.out.println("lista productos provisional LIST: " + producteList + " - floristeria prod LIST: " + floProList);//nuevo
+					System.out.println("lista productos provisional OBJ: " + floProObject);//nuevo
+					System.out.println("Producte eliminat!\n");
 					break;
 				}
 			} else {

@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 import application.FloristeriaController;
 
-public class MainMilestone1 {
+public class Main {
 	public static void main(String[] args) throws Exception {
 		FloristeriaController fc = new FloristeriaController();//Invoquem controller
 		int ids = 0; //Comptador inicial idShop

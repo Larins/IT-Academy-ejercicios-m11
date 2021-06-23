@@ -1,16 +1,16 @@
 package view;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-
 import javax.swing.JOptionPane;
-
 import application.FloristeriaController;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
 		FloristeriaController fc = new FloristeriaController();//Invoquem controller
+		boolean continuar = true;
 		int ids = 0; //Comptador inicial idShop
 		String nomP = "nova Floristeria" ;//Variable nom del producte
 		int qtyP; //Variable quantitat de producte
@@ -26,7 +26,7 @@ public class Main {
         Object[] producteObject = producteList.toArray();//Arraylist productes convertit en objecte
 		
         String[] deco = {"plastic", "wood"};//Arraylist materials admesos per al producte Decoration
-		String tecla;//Per continuar fent operacions
+		//String tecla;//Per continuar fent operacions
 		int opciomenu;
 		Scanner opcio = new Scanner(System.in);
 		do {
@@ -37,11 +37,15 @@ public class Main {
 			System.out.println("2  - Afegir Arbre");
 			System.out.println("3  - Afegir Flor");
 			System.out.println("4  - Afegir Decoració");
-			System.out.println("5  - Stock");
-			System.out.println("7  - Eliminar producte");//nuevo
+			System.out.println("5  - Stock totes les Floristeries");
+			System.out.println("6  - Eliminar producte - en construcció !!!");//nuevo
+			System.out.println("7  - Stock botiga amb quantitats - en construcció !!!!");//nuevo
+			System.out.println("8  - Stock botiga (Valorat) - en construcció");//nuevo
+			System.out.println("9  - Sortir");//Sortir App
+			
 			try {
 				opciomenu = opcio.nextInt();
-			if (opciomenu > 0 && opciomenu <= 7) { // Adaptar if al nombre d'opcions
+			if (opciomenu > 0 && opciomenu <= 9) { // Adaptar if al nombre d'opcions
 				switch (opciomenu) {
 				case 1://Crear Floristeria
 					ids++;
@@ -97,7 +101,7 @@ public class Main {
 					System.out.println("Stock floristeries i productes\n");
 					fc.stock();
 					break;
-				case 7://Eliminar producte
+				case 6://Eliminar producte
 					Object productRemove = (String) JOptionPane.showInputDialog(null, "Selecciona el producte a eliminar","Eliminar producte",
 							JOptionPane.QUESTION_MESSAGE, null, producteObject, producteObject[0]);
 					floProList.remove(producteList.indexOf(productRemove));
@@ -105,6 +109,20 @@ public class Main {
 					System.out.println("lista productos provisional LIST: " + producteList + " - floristeria prod LIST: " + floProList);//nuevo
 					System.out.println("lista productos provisional OBJ: " + floProObject);//nuevo
 					System.out.println("Producte eliminat!\n");
+					break;
+					
+				case 7: //Stock botiga amb quantitats
+					System.out.println("Stock botiga amb quantitats - en construcció !!!!");
+					break;
+					
+				case 8: //Stock botiga (Valorat)
+					System.out.println("Stock botiga (Valorat) - en construcció !!!!!");
+					break;
+					
+				case 9:// Sortir
+					continuar = false;
+					System.out.println ("Gràcies per fer servir la nostra App");
+					
 					break;
 				}
 			} else {
@@ -115,11 +133,11 @@ public class Main {
 
 			}catch (NumberFormatException n) {
 				System.out.println ("Valor incorrecte, ha de ser un nombre");
+			}catch (InputMismatchException i) {
+				System.out.println ("Escull una opció correcte del munú");
 			}
-			System.out.println("_______________________________________");
-			System.out.print("\nVols tornar a fer una operació? (S/N)\n");
-			tecla = opcio.next();
-		} while (tecla.equalsIgnoreCase("s"));
-		System.out.println ("Gràcies per fer servir la nostra App");
+			
+		} while (continuar);
+	
 	}
 }

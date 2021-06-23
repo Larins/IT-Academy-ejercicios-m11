@@ -149,5 +149,11 @@ public class FloristeriaController {
 		System.out.println(getAllProducts());
 		return null;
 	}
+	
+	public void valorTotal(String strore) {
+		
+		
+		
+	}
 
 }

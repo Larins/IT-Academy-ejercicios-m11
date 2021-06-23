@@ -2,17 +2,17 @@ package domain;
 
 public class Tree extends Product {
 
-	protected static float height;
+	protected float height;
 
 	public Tree(String botiga, float price, String name, int qty, float height) throws Exception {
 		super(botiga, price, name, qty);
 
-		Tree.height = height;
+		this.height = height;
 		// TODO Auto-generated constructor stub
 	}
 
 //Getter setter
-	public static float getHeight() {
+	public float getHeight() {
 		return height;
 	}
 
@@ -22,8 +22,8 @@ public class Tree extends Product {
 
 	@Override
 	public String toString() {
-		return "\nTree \n\tFloristeria: " + botiga + "\n\tNom: " + name + "\n\tAlçada: "
-				+ height + "\n\tPreu: " + price +  "\n\tQuantitat: " + qty + "\n";
+		return "Tree \tFloristeria: " + botiga + "\tNom: " + name + "\tAlçada: "
+				+ height + "\tPreu: " + price +  "\tQuantitat: " + qty;
 	}
 
 }

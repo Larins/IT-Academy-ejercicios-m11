@@ -2,14 +2,14 @@ package domain;
 
 public class Decoration extends Product {
 	
-	protected static String material;
+	protected String material;
 	
 	public Decoration(String botiga,float price, String name, int qty, String material) throws Exception {
 		super(botiga,price, name, qty);
-		Decoration.material = material;
+		material = material;
 	}
 	//Getter Setter
-	public static String getMaterial() {
+	public String getMaterial() {
 		return material;
 	}
 
@@ -19,8 +19,8 @@ public class Decoration extends Product {
 	
 	@Override
 	public String toString() {
-		return "\nDecoració \n\tFloristeria: " + botiga + "\n\tNom: " + name + "\n\tMaterial: "
-				+ material + "\n\tPreu: " + price +  "\n\tQuantitat: " + qty + "\n";
+		return "Decoració \tFloristeria: " + botiga + "\tNom: " + name + "\tMaterial: "
+				+ material + "\tPreu: " + price +  "\tQuantitat: " + qty;
 	}
 
 }

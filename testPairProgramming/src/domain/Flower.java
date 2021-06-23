@@ -22,8 +22,8 @@ public class Flower extends Product {
 
 	@Override
 	public String toString() {
-		return "\nFlower \n\tFloristeria: " + botiga + "\n\tNom: " + name + "\n\tColor: "
-				+ color + "\n\tPreu: " + price +  "\n\tQuantitat: " + qty + "\n";
+		return "Flower \tFloristeria: " + botiga + "\tNom: " + name + "\tColor: "
+				+ color + "\tPreu: " + price +  "\tQuantitat: " + qty;
 	}
 
 }

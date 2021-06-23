@@ -5,10 +5,13 @@ import java.util.List;
 
 public class Floristeria {
 	
-	protected int idShop;
-	public static String name;
-	private static List<Product> products = new ArrayList<Product>(); //nuevo
+	private int idShop;
+	private String name;
+	private List<Product> products = new ArrayList<Product>(); //nuevo
 
+	public void addProduct(Product product) {
+		products.add(product);
+	}
 	
 	public Floristeria(int idShop, String name) {
 		super();
@@ -21,7 +24,7 @@ public class Floristeria {
 	public void setIdShop(int idShop) {
 		this.idShop = idShop;
 	}
-	public static String getName() {
+	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
@@ -29,7 +32,23 @@ public class Floristeria {
 	}
 	@Override
 	public String toString() {
-		return "Floristeria\n\tID botiga:" + idShop + "\n\tNom: " + name + "\n\n";
+		return "Floristeria \tID botiga:" + idShop + "\tNom: " + name + "\n";
 	}
+	public List<Product> getProducts() {
+		return products;
+	}
+	public String getAllProducts() {
+		StringBuffer sb = new StringBuffer(); 
+		for(Product product:products) {
+			sb.append(product+"\n");
+		}
+		
+		return sb.toString();
+	}
+	
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+	
 	
 }

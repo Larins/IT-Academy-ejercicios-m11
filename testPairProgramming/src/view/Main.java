@@ -50,10 +50,14 @@ public class Main {
 				case 1://Crear Floristeria
 					ids++;
 					String nom=JOptionPane.showInputDialog("Introdueix nom de la Floristeria");
-					fc.createFloristeria(ids, nom);
-					System.out.println("Floristeria : "+ ids + " - " + nom + " CREADA !!" );
-			        floristeriaList.add(nom);
-					floristeriaObject = floristeriaList.toArray();//nuevo
+					if (fc.createFloristeria(ids, nom)){
+						System.out.println("Floristeria : "+ ids + " - " + nom + " CREADA !!" );
+				        floristeriaList.add(nom);
+						floristeriaObject = floristeriaList.toArray();//nuevo
+						
+					}
+					
+					
 			        break;
 					
 				case 2://Afegir arbre
@@ -134,9 +138,12 @@ public class Main {
 			}catch (NumberFormatException n) {
 				System.out.println ("Valor incorrecte, ha de ser un nombre");
 			}catch (InputMismatchException i) {
+				
 				System.out.println ("Escull una opció correcte del munú");
+				opcio.nextLine();
+				//continuar = true;
 			}
-			
+			//opciomenu = opcio.nextInt();
 		} while (continuar);
 	
 	}

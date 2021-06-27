@@ -121,12 +121,13 @@ public class Main {
 					
 				case 8: //Stock botiga (Valorat)
 					System.out.println("Stock botiga (Valorat) - en construcció !!!!!");
-					float stockprice = 0;
+					//float stockprice = 0;
 					store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
 							JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
 					
 					
-					//fc.valorTotal(store);
+					
+					
 					break;
 					
 				case 9:// Sortir

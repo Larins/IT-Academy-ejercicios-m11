@@ -150,7 +150,14 @@ public class FloristeriaController {
 		return null;
 	}
 	
-	public void valorTotal(String strore) {
+	public void valorTotal(String  store) {
+		
+		float totalValor = 0;
+		
+	
+		
+		
+		//System.out.println(floristeries.get(getAllProducts()));
 		
 		
 		

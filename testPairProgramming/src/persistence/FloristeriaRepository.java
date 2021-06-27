@@ -47,6 +47,12 @@ public class FloristeriaRepository {
 		if (product == null)
 			throw new Exception("El producte no pot estar buit.");
 		products.add(product);
+		
 	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+	
 
 }

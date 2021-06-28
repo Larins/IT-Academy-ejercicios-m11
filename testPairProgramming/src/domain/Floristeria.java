@@ -50,5 +50,19 @@ public class Floristeria {
 		this.products = products;
 	}
 	
+	public float totalValor()  {
+		double valor=0;
+		for (Product p: products) {
+			valor += p.getQty()*p.getPrice();
+		}
+		
+		return (float) valor;
+	}
+	
+	
+	
+	
+	
+	
 	
 }

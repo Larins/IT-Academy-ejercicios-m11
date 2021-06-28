@@ -125,7 +125,8 @@ public class Main {
 					store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria","Seleccionar floristeria",
 							JOptionPane.QUESTION_MESSAGE, null, floristeriaObject, floristeriaObject[0]);
 					
-					
+					JOptionPane.showMessageDialog(null,fc.valorTotal(store));
+					//System.out.println(fc.valorTotal(store));
 					
 					
 					break;

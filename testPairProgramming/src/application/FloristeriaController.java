@@ -150,16 +150,17 @@ public class FloristeriaController {
 		return null;
 	}
 	
-	public void valorTotal(String  store) {
+	public String valorTotal(Object  store) {
 		
 		float totalValor = 0;
 		
-	
+		Floristeria f =floristeries.get(store);
 		
+		totalValor = f.totalValor();
 		
-		//System.out.println(floristeries.get(getAllProducts()));
+		return "\nTotal stock valorat de la floristeria : " + store + " es de "+ totalValor + "Euros \n";
 		
-		
+			
 		
 	}
 

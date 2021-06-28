@@ -8,7 +8,7 @@ public class Tree extends Product {
 		super(botiga, price, name, qty);
 
 		this.height = height;
-		// TODO Auto-generated constructor stub
+		
 	}
 
 //Getter setter

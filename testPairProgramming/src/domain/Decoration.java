@@ -6,7 +6,7 @@ public class Decoration extends Product {
 	
 	public Decoration(String botiga,float price, String name, int qty, String material) throws Exception {
 		super(botiga,price, name, qty);
-		material = material;
+		this.material = material;
 	}
 	//Getter Setter
 	public String getMaterial() {

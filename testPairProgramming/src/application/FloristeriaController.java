@@ -38,7 +38,7 @@ public class FloristeriaController {
 	}
 
 	
-	public void removeTree(Object botiga, String nomP) {
+	public void removeProduct(Object botiga, String nomP) {
         try {
             //Tree tree = new Tree((String) botiga, priceP, nomP, qtyP, alcada);
             Floristeria flo = floristeries.get(botiga);
@@ -120,8 +120,7 @@ public class FloristeriaController {
 			
 		}
 		
-		
-		//JOptionPane.showMessageDialog(null, getAllProducts()+"\n");
+				
 	}
 
 	public String stockbotiga(Object store) {

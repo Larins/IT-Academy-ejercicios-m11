@@ -70,14 +70,15 @@ public class Main {
 						priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));
 						float alcada = Float.parseFloat(JOptionPane.showInputDialog("Introdueix l' alçada de " + nomP));
 						fc.createTree((String) store, priceP, nomP, qtyP, alcada);
-						System.out.println("Arbre creat");
 						producteList.add(nomP);// nuevo
 						producteObject = producteList.toArray();// nuevo
 						floProList.add((String) store);// nuevo
 						floProObject = floProList.toArray();// nuevo
-						System.out.println("lista productos provisional LIST: " + producteList
-								+ " - floristeria prod LIST: " + floProList);// nuevo
-						System.out.println("lista productos provisional OBJ: " + floProObject);// nuevo
+						
+						System.out.println("Arbre creat");
+						//System.out.println("lista productos provisional LIST: " + producteList
+						//		+ " - floristeria prod LIST: " + floProList);// nuevo
+						//System.out.println("lista productos provisional OBJ: " + floProObject);// nuevo
 
 						break;
 						
@@ -92,6 +93,11 @@ public class Main {
 						String color = JOptionPane.showInputDialog("Introdueix color de " + nomP);
 						fc.createFlower((String) store, priceP, nomP, qtyP, color);
 
+						producteList.add(nomP);// nuevo
+						producteObject = producteList.toArray();// nuevo
+						floProList.add((String) store);// nuevo
+						floProObject = floProList.toArray();// nuevo
+			
 						System.out.println("Flor creada ");
 						
 						break;
@@ -106,6 +112,14 @@ public class Main {
 						String mat = (String) JOptionPane.showInputDialog(null, "Selecciona el material de " + nomP,
 								"Afegir material", JOptionPane.QUESTION_MESSAGE, null, deco, deco[0]);
 						fc.createDecoration((String) store, priceP, nomP, qtyP, mat);
+			
+						producteList.add(nomP);// nuevo
+						producteObject = producteList.toArray();// nuevo
+						floProList.add((String) store);// nuevo
+						floProObject = floProList.toArray();// nuevo
+			
+						System.out.println("Decoració creada ");
+			
 						break;
 					case 5:// Printar stock: llista de floristeries y productes
 						
@@ -114,11 +128,24 @@ public class Main {
 						break;
 						
 					case 6:// Eliminar producte - en construcció
-						Object productRemove = (String) JOptionPane.showInputDialog(null,
-								"Selecciona el producte a eliminar", "Eliminar producte", JOptionPane.QUESTION_MESSAGE,
-								null, producteObject, producteObject[0]);
-						floProList.remove(producteList.indexOf(productRemove));
-						producteList.remove(producteList.indexOf(productRemove));
+						//Object productRemove = (String) JOptionPane.showInputDialog(null,
+						//"Selecciona el producte a eliminar", "Eliminar producte", JOptionPane.QUESTION_MESSAGE,
+						//		null, producteObject, producteObject[0]);
+								
+						Object botiga = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria",
+								"Seleccionar floristeria", JOptionPane.QUESTION_MESSAGE, null, floristeriaObject,
+								floristeriaObject[0]);
+						
+                        nomP = (String) JOptionPane.showInputDialog(null,
+	                                "Selecciona el producte a eliminar", "Eliminar producte", 
+	                                JOptionPane.QUESTION_MESSAGE,null, producteObject, producteObject[0]);
+	                    fc.removeTree((String) botiga, nomP);
+			
+													
+						
+						//int id=producteList.indexOf(productRemove);
+						//floProList.remove(id);
+						//producteList.remove(producteList.indexOf(productRemove));
 						System.out.println("lista productos provisional LIST: " + producteList
 								+ " - floristeria prod LIST: " + floProList);// nuevo
 						System.out.println("lista productos provisional OBJ: " + floProObject);// nuevo

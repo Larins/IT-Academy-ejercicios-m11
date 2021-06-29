@@ -37,12 +37,24 @@ public class FloristeriaController {
 		return ok;
 	}
 
+	
+	public void removeTree(Object botiga, String nomP) {
+        try {
+            //Tree tree = new Tree((String) botiga, priceP, nomP, qtyP, alcada);
+            Floristeria flo = floristeries.get(botiga);
+            flo.removeProduct(nomP);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("\nERROR: " + e.getMessage());
+        }
+    }
+	
 	// constructor tree
 
 	public void createTree(String botiga, float price, String name, int qty, float height) throws Exception {
 		try {
-			Tree tree = new Tree(botiga, price, name, qty, height);
 			Floristeria flo = floristeries.get(botiga);
+			Tree tree = new Tree(botiga, price, name, qty, height);
 			flo.addProduct(tree);
 			// repository.addProduct(tree);
 		} catch (Exception e) {

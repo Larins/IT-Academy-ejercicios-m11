@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
 
 public class Floristeria {
@@ -10,7 +11,11 @@ public class Floristeria {
 	private List<Product> products = new ArrayList<Product>(); // nuevo
 
 	public void addProduct(Product product) {
-		products.add(product);
+		if (!products.contains(product)) {//true -cuando sea el mismo name
+			products.add(product);
+		}
+		else
+			System.out.println("Producte ja existeix");
 	}
 
 	public Floristeria(int idShop, String name) {
@@ -78,6 +83,49 @@ public class Floristeria {
 			
 		}
 		return stock;
+	}
+
+	public void removeProduct(String nomP) {
+		 
+		//1º 
+		/*for(int i=0; i<products.size();i++) {
+			Product p=products.get(i);
+			//..
+		}
+		//2º 
+		for(Product p: products) {
+			//..
+		}
+		//3º 
+   	    Iterator<Product> iter = products.iterator();
+		while(iter.hasNext()) {
+			//..
+			
+			iter.next();
+		}*/
+				
+		
+		Iterator<Product> iter = products.iterator();
+		while(iter.hasNext()) {
+			Product p=iter.next();
+			if (p.getName().equals(nomP)) {
+				iter.remove();		
+				
+			}
+		}
+		
+		/*Product sel=new Product();
+		for(Product p: products) {
+			if (p.getName().equals(nomP)) {
+				sel.setName(p.getName());
+				sel.setBotiga(p.getBotiga());
+				sel.setPrice(p.getPrice());		//equals esta definido para 3 variables						
+				break;
+			}
+		}
+		products.remove(sel);//<-- debe tener el mismo estado interno y declarar equals
+		*/
+		
 	}
 
 }

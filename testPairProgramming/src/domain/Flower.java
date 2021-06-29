@@ -2,7 +2,7 @@ package domain;
 
 public class Flower extends Product {
 
-	protected static String color;
+	protected String color;
 
 	public Flower(String botiga, float price, String name, int qty, String color) throws Exception {
 		super(botiga, price, name, qty);
@@ -12,7 +12,7 @@ public class Flower extends Product {
 
 	// Getter Setter
 	
-	public static String getColor() {
+	public String getColor() {
 		return color;
 	}
 

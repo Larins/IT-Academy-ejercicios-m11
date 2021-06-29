@@ -4,11 +4,15 @@ public class Tree extends Product {
 
 	protected float height;
 
+	
+	
 	public Tree(String botiga, float price, String name, int qty, float height) throws Exception {
 		super(botiga, price, name, qty);
-
 		this.height = height;
-		
+	}
+
+	public Tree() {
+		super();		
 	}
 
 //Getter setter
@@ -25,5 +29,7 @@ public class Tree extends Product {
 		return "Tree \tFloristeria: " + botiga + "\tNom: " + name + "\tAlçada: "
 				+ height + "\tPreu: " + price +  "\tQuantitat: " + qty;
 	}
+	
+	
 
 }

@@ -25,8 +25,8 @@ public class Product {
 		this.qty = qty;
 
 
-		idProduct = COUNTER_PRODUCTS;
-		COUNTER_PRODUCTS++;
+		//idProduct = COUNTER_PRODUCTS;
+		//COUNTER_PRODUCTS++;
 
 	}
 
@@ -40,13 +40,13 @@ public class Product {
 		this.botiga = botiga;
 	}
 
-	public int getIdProduct() {
+	/*public int getIdProduct() {
 		return idProduct;
 	}
 
 	public void setIdProduct(int id) {
 		this.idProduct = idProduct;
-	}
+	}*/
 
 	public float getPrice() {
 		return price;
@@ -73,13 +73,13 @@ public class Product {
 		this.qty = qty;
 	}
 
-	public static int getCOUNTER_PRODUCTS() {
+	/*public static int getCOUNTER_PRODUCTS() {
 		return COUNTER_PRODUCTS;
 	}
 
 	public static void setCOUNTER_PRODUCTS(int cOUNTER_PRODUCTS) {
 		COUNTER_PRODUCTS = cOUNTER_PRODUCTS;
-	}
+	}*/
 
 	@Override
 	public int hashCode() {

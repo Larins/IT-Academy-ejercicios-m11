@@ -136,19 +136,26 @@ public class Main {
 								"Seleccionar floristeria", JOptionPane.QUESTION_MESSAGE, null, floristeriaObject,
 								floristeriaObject[0]);
 						
+						
+						if (producteObject == null) {
+	                    	System.out.println("No hi ha productes encara!!!");
+						}else {
                         nomP = (String) JOptionPane.showInputDialog(null,
 	                                "Selecciona el producte a eliminar", "Eliminar producte", 
 	                                JOptionPane.QUESTION_MESSAGE,null, producteObject, producteObject[0]);
+                        
 	                    fc.removeProduct((String) botiga, nomP);
-			
-							//prueba push						
+	                    
+	                    if (producteList.contains(nomP)) {
+	                    	producteList.remove(nomP);
+	                    	producteObject = producteList.toArray();
+	                    }}
+	                    
+	                    
+		                   
 						
-						//int id=producteList.indexOf(productRemove);
-						//floProList.remove(id);
-						//producteList.remove(producteList.indexOf(productRemove));
-						System.out.println("lista productos provisional LIST: " + producteList
-								+ " - floristeria prod LIST: " + floProList);// nuevo
-						System.out.println("lista productos provisional OBJ: " + floProObject);// nuevo
+
+	                    
 						System.out.println("Producte eliminat!\n");
 						break;
 
@@ -182,7 +189,7 @@ public class Main {
 					System.out.println("Introdueix una opció correcta");
 				}
 			} catch (ArrayIndexOutOfBoundsException e) {
-				System.out.println("No has creat cap floristeria encara !!!!");
+				System.out.println("La llista està buida!!");
 
 			} catch (NumberFormatException n) {
 				System.out.println("Valor incorrecte, ha de ser un nombre");

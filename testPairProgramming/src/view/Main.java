@@ -139,7 +139,7 @@ public class Main {
                         nomP = (String) JOptionPane.showInputDialog(null,
 	                                "Selecciona el producte a eliminar", "Eliminar producte", 
 	                                JOptionPane.QUESTION_MESSAGE,null, producteObject, producteObject[0]);
-	                    fc.removeTree((String) botiga, nomP);
+	                    fc.removeProduct((String) botiga, nomP);
 			
 							//prueba push						
 						

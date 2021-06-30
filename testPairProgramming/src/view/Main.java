@@ -137,9 +137,7 @@ public class Main {
 								floristeriaObject[0]);
 						
 						
-						if (producteObject == null) {
-	                    	System.out.println("No hi ha productes encara!!!");
-						}else {
+						
                         nomP = (String) JOptionPane.showInputDialog(null,
 	                                "Selecciona el producte a eliminar", "Eliminar producte", 
 	                                JOptionPane.QUESTION_MESSAGE,null, producteObject, producteObject[0]);
@@ -149,7 +147,7 @@ public class Main {
 	                    if (producteList.contains(nomP)) {
 	                    	producteList.remove(nomP);
 	                    	producteObject = producteList.toArray();
-	                    }}
+	                    }
 	                    
 	                    
 		                   

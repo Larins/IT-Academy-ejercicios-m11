@@ -11,7 +11,7 @@ public class Flower extends Product {
 	}
 
 	// Getter Setter
-	
+
 	public String getColor() {
 		return color;
 	}
@@ -20,10 +20,12 @@ public class Flower extends Product {
 		this.color = color;
 	}
 
+	// to string
+
 	@Override
 	public String toString() {
-		return "Flower \tFloristeria: " + botiga + "\tNom: " + name + "\tColor: "
-				+ color + "\tPreu: " + price +  "\tQuantitat: " + qty;
+		return "Flower \tFloristeria: " + botiga + "\tNom: " + name + "\tColor: " + color + "\tPreu: " + price
+				+ "\tQuantitat: " + qty;
 	}
 
 }

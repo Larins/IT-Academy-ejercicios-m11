@@ -37,18 +37,18 @@ public class FloristeriaController {
 		return ok;
 	}
 
-	
+	// remove producte
+
 	public void removeProduct(Object botiga, String nomP) {
-        try {
-            //Tree tree = new Tree((String) botiga, priceP, nomP, qtyP, alcada);
-            Floristeria flo = floristeries.get(botiga);
-            flo.removeProduct(nomP);
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("\nERROR: " + e.getMessage());
-        }
-    }
-	
+		try {
+			Floristeria flo = floristeries.get(botiga);
+			flo.removeProduct(nomP);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("\nERROR: " + e.getMessage());
+		}
+	}
+
 	// constructor tree
 
 	public void createTree(String botiga, float price, String name, int qty, float height) throws Exception {
@@ -56,7 +56,6 @@ public class FloristeriaController {
 			Floristeria flo = floristeries.get(botiga);
 			Tree tree = new Tree(botiga, price, name, qty, height);
 			flo.addProduct(tree);
-			// repository.addProduct(tree);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("\nERROR: " + e.getMessage());
@@ -84,54 +83,34 @@ public class FloristeriaController {
 			Decoration decoration = new Decoration(botiga, price, name, qty, material);
 			Floristeria flo = floristeries.get(botiga);
 			flo.addProduct(decoration);
-			// repository.addProduct(decoration);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("\nERROR: " + e.getMessage() + "El material debe ser 'plastic' o 'wood'.");
 		}
 	}
 
-	// GetAllProducts
-	/*public String getAllProducts(String botiga) {
-		StringBuilder sb = new StringBuilder();
-		for (Entry<String, Floristeria> entry : floristeries.entrySet()) {
-			String key = entry.getKey();
-			
-			Floristeria value = entry.getValue();
-			sb.append(value.getAllProducts());
-		}
-
-		return sb.toString();
-	}*/
-
 	public void stock() {
 
 		List<String> l = new ArrayList<String>(floristeries.keySet());
-		
-		
+
 		for (String cadena : l) {
-			System.out.println("Floristeria " +cadena);
-			//System.out.println(floristeries.get(cadena));
-			//stockbotiga(cadena);
-			//System.out.println(getAllProducts(cadena));
-			
+			System.out.println("Floristeria " + cadena);
+
 			Floristeria flo = floristeries.get(cadena);
 			System.out.println(flo.getAllProducts());
-			
+
 		}
-		
-				
+
 	}
 
 	public String stockbotiga(Object store) {
-		
+
 		String stockB;
-		
+
 		Floristeria f = floristeries.get(store);
-		
+
 		stockB = f.totalBotiga();
 
-		//System.out.println(getAllProducts());
 		return stockB;
 	}
 

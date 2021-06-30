@@ -1,32 +1,21 @@
 package domain;
 
-
 public class Product {
 
 	protected Object botiga;
-	protected int idProduct;
 	protected float price;
 	protected String name;
 	protected int qty;
 
-
-	private static int COUNTER_PRODUCTS = 1;
-
-	
-	
 	public Product() {
 		super();
 	}
 
-	public Product(String botiga,float price, String name, int qty) throws Exception {		
+	public Product(String botiga, float price, String name, int qty) throws Exception {
 		this.botiga = botiga;
 		this.price = price;
 		this.name = name;
 		this.qty = qty;
-
-
-		//idProduct = COUNTER_PRODUCTS;
-		//COUNTER_PRODUCTS++;
 
 	}
 
@@ -40,20 +29,12 @@ public class Product {
 		this.botiga = botiga;
 	}
 
-	/*public int getIdProduct() {
-		return idProduct;
-	}
-
-	public void setIdProduct(int id) {
-		this.idProduct = idProduct;
-	}*/
-
 	public float getPrice() {
 		return price;
 	}
 
 	public void setPrice(float price) {
-				
+
 		this.price = price;
 	}
 
@@ -73,14 +54,6 @@ public class Product {
 		this.qty = qty;
 	}
 
-	/*public static int getCOUNTER_PRODUCTS() {
-		return COUNTER_PRODUCTS;
-	}
-
-	public static void setCOUNTER_PRODUCTS(int cOUNTER_PRODUCTS) {
-		COUNTER_PRODUCTS = cOUNTER_PRODUCTS;
-	}*/
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -95,8 +68,8 @@ public class Product {
 			return true;
 		if (obj == null)
 			return false;
-		//if (getClass() != obj.getClass())
-		//	return false;
+		// if (getClass() != obj.getClass())
+		// return false;
 		Product other = (Product) obj;
 		if (name == null) {
 			if (other.name != null)
@@ -105,8 +78,5 @@ public class Product {
 			return false;
 		return true;
 	}
-
-
-	
 
 }

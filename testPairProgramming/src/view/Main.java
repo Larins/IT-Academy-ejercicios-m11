@@ -19,14 +19,10 @@ public class Main {
 		List<String> floristeriaList = new ArrayList<String>();// Arraylist floristeries per a selecionar botiga
 		Object[] floristeriaObject = floristeriaList.toArray();// Arraylist floristeries convertit en objecte
 
-		List<String> floProList = new ArrayList<String>();// Arraylist floristeries de cada producte
-		Object[] floProObject = floProList.toArray();// Arraylist floristeries de cada producte convertit en objecte
-
 		List<String> producteList = new ArrayList<String>();// Arraylist productes
 		Object[] producteObject = producteList.toArray();// Arraylist productes convertit en objecte
 
 		String[] deco = { "plastic", "wood" };// Arraylist materials admesos per al producte Decoration
-		// String tecla;//Per continuar fent operacions
 		int opciomenu;
 		Scanner opcio = new Scanner(System.in);
 		do {
@@ -38,9 +34,9 @@ public class Main {
 			System.out.println("3  - Afegir Flor");
 			System.out.println("4  - Afegir Decoració");
 			System.out.println("5  - Stock totes les Floristeries");
-			System.out.println("6  - Eliminar producte - en construcció !!!");// nuevo
-			System.out.println("7  - Stock botiga amb quantitats");// nuevo
-			System.out.println("8  - Stock botiga (Valorat)");// nuevo
+			System.out.println("6  - Eliminar Producte");
+			System.out.println("7  - Stock Floristeria amb quantitats");
+			System.out.println("8  - Stock Floristeria (Valorat)");
 			System.out.println("9  - Sortir");// Sortir App
 
 			try {
@@ -53,14 +49,13 @@ public class Main {
 						if (fc.createFloristeria(ids, nom)) {
 							System.out.println("Floristeria : " + ids + " - " + nom + " CREADA !!");
 							floristeriaList.add(nom);
-							floristeriaObject = floristeriaList.toArray();// nuevo
+							floristeriaObject = floristeriaList.toArray();
 
 						}
 
 						break;
 
 					case 2:// Afegir arbre
-							// floristeriaObject = floristeriaList.toArray();
 						Object store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria",
 								"Seleccionar floristeria", JOptionPane.QUESTION_MESSAGE, null, floristeriaObject,
 								floristeriaObject[0]);
@@ -70,20 +65,14 @@ public class Main {
 						priceP = Float.parseFloat(JOptionPane.showInputDialog("Introdueix el preu de " + nomP));
 						float alcada = Float.parseFloat(JOptionPane.showInputDialog("Introdueix l' alçada de " + nomP));
 						fc.createTree((String) store, priceP, nomP, qtyP, alcada);
-						producteList.add(nomP);// nuevo
-						producteObject = producteList.toArray();// nuevo
-						floProList.add((String) store);// nuevo
-						floProObject = floProList.toArray();// nuevo
-						
+						producteList.add(nomP);
+						producteObject = producteList.toArray();
+
 						System.out.println("Arbre creat");
-						//System.out.println("lista productos provisional LIST: " + producteList
-						//		+ " - floristeria prod LIST: " + floProList);// nuevo
-						//System.out.println("lista productos provisional OBJ: " + floProObject);// nuevo
 
 						break;
-						
+
 					case 3:// Afegir flor
-							// floristeriaObject = floristeriaList.toArray();
 						store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria",
 								"Seleccionar floristeria", JOptionPane.QUESTION_MESSAGE, null, floristeriaObject,
 								floristeriaObject[0]);
@@ -93,15 +82,13 @@ public class Main {
 						String color = JOptionPane.showInputDialog("Introdueix color de " + nomP);
 						fc.createFlower((String) store, priceP, nomP, qtyP, color);
 
-						producteList.add(nomP);// nuevo
-						producteObject = producteList.toArray();// nuevo
-						floProList.add((String) store);// nuevo
-						floProObject = floProList.toArray();// nuevo
-			
+						producteList.add(nomP);
+						producteObject = producteList.toArray();
+
 						System.out.println("Flor creada ");
-						
+
 						break;
-						
+
 					case 4:// Afegir decoració
 						store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria",
 								"Seleccionar floristeria", JOptionPane.QUESTION_MESSAGE, null, floristeriaObject,
@@ -112,68 +99,55 @@ public class Main {
 						String mat = (String) JOptionPane.showInputDialog(null, "Selecciona el material de " + nomP,
 								"Afegir material", JOptionPane.QUESTION_MESSAGE, null, deco, deco[0]);
 						fc.createDecoration((String) store, priceP, nomP, qtyP, mat);
-			
-						producteList.add(nomP);// nuevo
-						producteObject = producteList.toArray();// nuevo
-						floProList.add((String) store);// nuevo
-						floProObject = floProList.toArray();// nuevo
-			
+
+						producteList.add(nomP);
+						producteObject = producteList.toArray();
+
 						System.out.println("Decoració creada ");
-			
+
 						break;
 					case 5:// Printar stock: llista de floristeries y productes
-						
+
 						System.out.println("Stock floristeries i productes\n");
 						fc.stock();
 						break;
-						
-					case 6:// Eliminar producte - en construcció
-						//Object productRemove = (String) JOptionPane.showInputDialog(null,
-						//"Selecciona el producte a eliminar", "Eliminar producte", JOptionPane.QUESTION_MESSAGE,
-						//		null, producteObject, producteObject[0]);
-								
+
+					case 6:// Eliminar producte
+
 						Object botiga = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria",
 								"Seleccionar floristeria", JOptionPane.QUESTION_MESSAGE, null, floristeriaObject,
 								floristeriaObject[0]);
-						
-						
-						
-                        nomP = (String) JOptionPane.showInputDialog(null,
-	                                "Selecciona el producte a eliminar", "Eliminar producte", 
-	                                JOptionPane.QUESTION_MESSAGE,null, producteObject, producteObject[0]);
-                        
-	                    fc.removeProduct((String) botiga, nomP);
-	                    
-	                    if (producteList.contains(nomP)) {
-	                    	producteList.remove(nomP);
-	                    	producteObject = producteList.toArray();
-	                    }
-	                    
-	                    
-		                   
-						
 
-	                    
+						nomP = (String) JOptionPane.showInputDialog(null, "Selecciona el producte a eliminar",
+								"Eliminar producte", JOptionPane.QUESTION_MESSAGE, null, producteObject,
+								producteObject[0]);
+
+						fc.removeProduct((String) botiga, nomP);
+
+						if (producteList.contains(nomP)) {
+							producteList.remove(nomP);
+							producteObject = producteList.toArray();
+						}
+
 						System.out.println("Producte eliminat!\n");
 						break;
 
 					case 7: // Stock botiga amb quantitats
-						
+
 						store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria",
 								"Seleccionar floristeria", JOptionPane.QUESTION_MESSAGE, null, floristeriaObject,
 								floristeriaObject[0]);
-						JOptionPane.showMessageDialog(null,fc.stockbotiga(store));
-						
+						JOptionPane.showMessageDialog(null, fc.stockbotiga(store));
+
 						break;
 
 					case 8: // Stock botiga (Valorat)
-						
+
 						store = (String) JOptionPane.showInputDialog(null, "Selecciona la floristeria",
 								"Seleccionar floristeria", JOptionPane.QUESTION_MESSAGE, null, floristeriaObject,
 								floristeriaObject[0]);
 
-						JOptionPane.showMessageDialog(null,fc.valorTotal(store));
-						
+						JOptionPane.showMessageDialog(null, fc.valorTotal(store));
 
 						break;
 
@@ -193,11 +167,9 @@ public class Main {
 				System.out.println("Valor incorrecte, ha de ser un nombre");
 			} catch (InputMismatchException i) {
 
-				System.out.println("Escull una opció correcte del munú");
+				System.out.println("Escull una opció correcta del munú");
 				opcio.nextLine();
-				// continuar = true;
 			}
-			// opciomenu = opcio.nextInt();
 		} while (continuar);
 
 	}

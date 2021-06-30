@@ -4,18 +4,17 @@ public class Tree extends Product {
 
 	protected float height;
 
-	
-	
 	public Tree(String botiga, float price, String name, int qty, float height) throws Exception {
 		super(botiga, price, name, qty);
 		this.height = height;
 	}
 
 	public Tree() {
-		super();		
+		super();
 	}
 
-//Getter setter
+	// Getter setter
+	
 	public float getHeight() {
 		return height;
 	}
@@ -24,12 +23,12 @@ public class Tree extends Product {
 		this.height = height;
 	}
 
+	// to string
+
 	@Override
 	public String toString() {
-		return "Tree \tFloristeria: " + botiga + "\tNom: " + name + "\tAlçada: "
-				+ height + "\tPreu: " + price +  "\tQuantitat: " + qty;
+		return "Tree \tFloristeria: " + botiga + "\tNom: " + name + "\tAlçada: " + height + "\tPreu: " + price
+				+ "\tQuantitat: " + qty;
 	}
-	
-	
 
 }

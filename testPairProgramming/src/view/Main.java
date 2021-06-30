@@ -141,7 +141,7 @@ public class Main {
 	                                JOptionPane.QUESTION_MESSAGE,null, producteObject, producteObject[0]);
 	                    fc.removeTree((String) botiga, nomP);
 			
-													
+							//prueba push						
 						
 						//int id=producteList.indexOf(productRemove);
 						//floProList.remove(id);
